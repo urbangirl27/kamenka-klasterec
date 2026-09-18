@@ -6,44 +6,40 @@
 <title>Location | Kamenka Klasterec</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
+<body data-page="location">
 <header class="site">
   <div class="wrap">
     <span class="logo">Kamenka Klasterec</span>
     <nav class="main">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="location.html" class="active">Location</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="navHome">Home</a>
+      <a href="about.html" data-i18n="navAbout">About Us</a>
+      <a href="location.html" class="active" data-i18n="navLocation">Location</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
     </nav>
   </div>
 </header>
-
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Getting here</p>
-    <h1>Set within [region/area]</h1>
-    <p class="lead" style="margin-bottom:1rem;">[Ivan's note on what is nearby — nature, towns, distance from key landmarks.]</p>
+    <p class="eyebrow" data-i18n="locationEyebrow">Getting here</p>
+    <h1 data-i18n="locationTitle">Set within [region/area]</h1>
+    <p class="lead" style="margin-bottom:1rem;" data-i18n="locationLead">[Ivan's note on what is nearby — nature, towns, distance from key landmarks.]</p>
   </div>
 </section>
-
 <section class="split reverse">
   <div class="wrap" style="display:contents;">
     <div class="text" style="max-width:60ch;">
-      <h2 style="margin-bottom:1rem;">What is nearby</h2>
-      <p style="margin-bottom:1rem;">[Ivan's list or description of nearby attractions, walks, towns, transport.]</p>
-      <div class="placeholder-text">Placeholder — replace with Ivan's copy once received.</div>
+      <h2 style="margin-bottom:1rem;" data-i18n="nearbyTitle">What is nearby</h2>
+      <p style="margin-bottom:1rem;" data-i18n="nearbyText">[Ivan's list or description of nearby attractions, walks, towns, transport.]</p>
+      <div class="placeholder-text" data-i18n="placeholderCopy">Placeholder — replace with Ivan's copy once received.</div>
     </div>
-    <img src="photos/balcony-view.jpg" alt="View of the surrounding town and hills from the balcony" style="width:100%; border-radius:4px; display:block;">
+    <img src="photos/balcony-view.jpg" alt="View of the surrounding town and hills from the balcony" data-alt-en="View of the surrounding town and hills from the balcony" data-alt-cz="Výhled z balkonu na okolní město a kopce" style="width:100%; border-radius:4px; display:block;">
   </div>
 </section>
-
 <footer class="site">
   <div class="wrap">
     &copy; Kamenka Klasterec — Chomutovská 209, Klášterec nad Ohří, 431 51, (Za nakládací rampou TESCA)
   </div>
 </footer>
-
+<script src="language.js"></script>
 </body>
 </html>
