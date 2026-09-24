@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kamenka Klasterec | A quiet retreat</title>
 <link rel="stylesheet" href="style.css">
+<style>
+@media (max-width: 700px) {
+  .intro-photo-pair,
+  section.split { grid-template-columns: 1fr !important; }
+}
+</style>
 </head>
 <body data-page="home">
 <header class="site">
@@ -28,13 +34,13 @@
 </section>
 <section style="padding: 1rem 0 4rem;">
   <div class="wrap">
-    <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; align-items:start;">
+    <div class="intro-photo-pair" style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; align-items:start;">
       <img src="photos/entrance.jpg" alt="Entrance to the property" data-alt-en="Entrance to the property" data-alt-cz="Vchod do ubytování" style="width:100%; height:auto; border-radius:4px; display:block;">
       <img src="photos/balcony-view.jpg" alt="View from the balcony" data-alt-en="View from the balcony" data-alt-cz="Výhled z balkonu" style="width:100%; height:auto; border-radius:4px; display:block;">
     </div>
   </div>
 </section>
-<section class="split">
+<section class="split" style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:2rem; align-items:center;">
   <div class="wrap" style="display:contents;">
     <img src="photos/dining-room.jpg" alt="Dining room with exposed beams" data-alt-en="Dining room with exposed beams" data-alt-cz="Jídelna s odhalenými trámy" style="width:100%; border-radius:4px; display:block;">
     <div class="text" style="max-width:60ch;">
@@ -58,33 +64,37 @@
 </section>
 <section style="padding: 1rem 0 4rem;">
   <div class="wrap">
-    <h2 style="text-align:center; margin-bottom:2rem;">Second Floor</h2>
-    <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; align-items:start;">
-      <img src="photos/Entrance to the building.jpg" alt="Entrance to the building" data-alt-en="Entrance to the building" data-alt-cz="Vchod do budovy" style="width:100%; height:auto; border-radius:4px; display:block;">
-      <img src="photos/master-bedroom.jpg" alt="Second-floor master bedroom" data-alt-en="Second-floor master bedroom" data-alt-cz="Hlavní ložnice ve druhém patře" style="width:100%; height:auto; border-radius:4px; display:block;">
+    <h2 style="text-align:center; margin-bottom: 2rem;">Second Floor</h2>
+
+    <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; align-items:start; margin-bottom:1rem;">
+      <img src="photos/Entrance to the building.jpg" alt="Entrance to the building" style="width:100%; height:auto; border-radius:4px; display:block;">
+      <img src="photos/master-bedroom.jpg" alt="Master bedroom" style="width:100%; height:auto; border-radius:4px; display:block;">
     </div>
-    <div style="margin-top:1rem;">
-      <img src="photos/single-bed.jpg" alt="Second-floor bedroom" data-alt-en="Second-floor bedroom" data-alt-cz="Ložnice ve druhém patře" style="width:100%; height:auto; border-radius:4px; display:block;">
+
+    <div style="margin-bottom:1rem;">
+      <img src="photos/single-bed.jpg" alt="Second bedroom" style="width:100%; height:auto; border-radius:4px; display:block;">
     </div>
-    <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; align-items:start; margin-top:1rem;">
-      <img src="photos/bathroom.jpg" alt="Second-floor bathroom with bathtub" data-alt-en="Second-floor bathroom with bathtub" data-alt-cz="Koupelna ve druhém patře s vanou" style="width:100%; height:auto; border-radius:4px; display:block;">
-      <img src="photos/vanity.jpg" alt="Bathroom vanity" data-alt-en="Bathroom vanity" data-alt-cz="Koupelnová skříňka s umyvadlem" style="width:100%; height:auto; border-radius:4px; display:block;">
+
+    <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; align-items:start; margin-bottom:1rem;">
+      <img src="photos/bathroom.jpg" alt="Second-floor bathroom with bathtub and toilet" style="width:100%; height:auto; border-radius:4px; display:block;">
+      <img src="photos/vanity.jpg" alt="Bathroom vanity" style="width:100%; height:auto; border-radius:4px; display:block;">
     </div>
-    <div style="margin-top:1rem;">
-      <img src="photos/2nd fl staircase.jpg" alt="Second-floor staircase" data-alt-en="Second-floor staircase" data-alt-cz="Schodiště ve druhém patře" style="width:100%; height:auto; border-radius:4px; display:block;">
+
+    <div>
+      <img src="photos/2nd fl staircase.jpg" alt="Second-floor staircase" style="width:100%; height:auto; border-radius:4px; display:block;">
     </div>
   </div>
 </section>
 <section style="padding: 1rem 0 4rem;">
   <div class="wrap">
-    <h2 style="text-align:center; margin-bottom:2rem;">Attic</h2>
+    <h2 style="text-align:center; margin-bottom: 2rem;">Attic</h2>
     <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; align-items:start;">
-      <img src="photos/Attic 1st rm- 2nd single bed view of window.jpg" alt="Attic room with single bed and window view" data-alt-en="Attic room with single bed and window view" data-alt-cz="Podkrovní pokoj s jednolůžkem a výhledem z okna" style="width:100%; height:auto; border-radius:4px; display:block;">
-      <img src="photos/Attic 2nd room with 1 master-1 double beds and a desk.jpg" alt="Attic room with beds and desk" data-alt-en="Attic room with beds and desk" data-alt-cz="Podkrovní pokoj s postelemi a pracovním stolem" style="width:100%; height:auto; border-radius:4px; display:block;">
-      <img src="photos/Attic shower.jpg" alt="Attic shower" data-alt-en="Attic shower" data-alt-cz="Sprcha v podkroví" style="width:100%; height:auto; border-radius:4px; display:block;">
-      <img src="photos/Attic-1st rm- 1st single bed_balcony side.jpg" alt="Attic room with single bed and balcony side" data-alt-en="Attic room with single bed and balcony side" data-alt-cz="Podkrovní pokoj s jednolůžkem a stranou k balkonu" style="width:100%; height:auto; border-radius:4px; display:block;">
-      <img src="photos/Attic-1st rm- 2nd single bed-closet and balcony side.jpg" alt="Attic room with single bed, closet and balcony side" data-alt-en="Attic room with single bed, closet and balcony side" data-alt-cz="Podkrovní pokoj s jednolůžkem, skříní a stranou k balkonu" style="width:100%; height:auto; border-radius:4px; display:block;">
-      <img src="photos/Attic-1st rm- balcony door and desk.jpg" alt="Attic room with balcony door and desk" data-alt-en="Attic room with balcony door and desk" data-alt-cz="Podkrovní pokoj s balkonovými dveřmi a pracovním stolem" style="width:100%; height:auto; border-radius:4px; display:block;">
+      <img src="photos/Attic 1st rm- 2nd single bed view of window.jpg" alt="Attic first room, second single bed and window" style="width:100%; height:auto; border-radius:4px; display:block;">
+      <img src="photos/Attic 2nd room with 1 master-1 double beds and a desk.jpg" alt="Attic second room with beds and desk" style="width:100%; height:auto; border-radius:4px; display:block;">
+      <img src="photos/Attic shower.jpg" alt="Attic shower" style="width:100%; height:auto; border-radius:4px; display:block;">
+      <img src="photos/Attic-1st rm- 1st single bed_balcony side.jpg" alt="Attic first room, first single bed and balcony side" style="width:100%; height:auto; border-radius:4px; display:block;">
+      <img src="photos/Attic-1st rm- 2nd single bed-closet and balcony side.jpg" alt="Attic first room, second single bed, closet and balcony side" style="width:100%; height:auto; border-radius:4px; display:block;">
+      <img src="photos/Attic-1st rm- balcony door and desk.jpg" alt="Attic first room, balcony door and desk" style="width:100%; height:auto; border-radius:4px; display:block;">
     </div>
   </div>
 </section>
