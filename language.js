@@ -23,6 +23,8 @@ const translations = {
     homeComfort3: 'The second floor and the attached attic hold three separate double rooms. The attic has its own private bathroom with a shower and a toilet. The second floor also has a spacious kitchen with a dining table, a television, and a private bathroom with a bathtub and a toilet, along with a utility room with a washing machine and dryer.',
     homeComfort4: 'The attic and second floor can be adapted to suit individual requirements, for up to ten people.',
     galleryTitle: 'A closer look',
+    secondFloorTitle: 'Second Floor',
+    atticTitle: 'Attic',
 
     aboutEyebrow: 'Who we are',
     aboutTitle: 'The story behind the lodge',
@@ -39,7 +41,7 @@ const translations = {
     nearbyText: "[Ivan's list or description of nearby attractions, walks, towns, transport.]",
 
     contactLead: 'Do you have a question or would you like to book a stay? Fill out the form below and we will get back to you within 24 hours.',
-    contactDirect: 'You can also contact us directly by phone: +420 606 445 681 or email: kamenka.klasterec@gmail.com',
+    contactDirect: 'You can also contact us directly by phone: 606445681 or email: kamenka.klasterec@gmail.com',
     nameLabel: 'Name',
     emailLabel: 'Email',
     datesLabel: 'Dates you are interested in',
@@ -51,10 +53,10 @@ const translations = {
     sendButton: 'Send enquiry',
 
     confirmationTitle: 'Good day',
-    confirmationText1: 'Thank you very much for your interest in staying at Kamenka in Klášterec nad Ohří.',
-    confirmationText2: 'We have received your enquiry and will get back to you with a quotation or booking confirmation as soon as possible, usually within 24 hours.',
-    confirmationText3: 'Should you have any urgent questions in the meantime, please feel free to contact us by phone: +420 606 445 681.',
-    confirmationSignoff: 'We look forward to hearing from you and hope to welcome you to Kamenka soon.<br>Warm regards,<br>The Kamenka team',
+    confirmationText1: 'Thank you for your interest in accommodation at Kamenka in Klášterec nad Ohří.',
+    confirmationText2: 'We will send you a quote or booking confirmation as soon as possible, usually within 24 hours.',
+    confirmationText3: 'For urgent questions, you can contact us by phone: 606445681.',
+    confirmationSignoff: 'Best regards, Kamenka team',
     confirmationEmail: 'kamenka.klasterec@gmail.com',
     confirmationClose: 'Close',
 
@@ -156,6 +158,8 @@ const translations = {
     homeComfort3: 'Ve druhém patře a přilehlém podkroví jsou tři samostatné dvoulůžkové pokoje. Podkroví má vlastní koupelnu se sprchou a toaletou. Ve druhém patře je také prostorná kuchyň s jídelním stolem, televizí a vlastní koupelna s vanou a toaletou spolu s technickou místností s pračkou a sušičkou.',
     homeComfort4: 'Podkroví a druhé patro lze přizpůsobit individuálním potřebám až pro deset osob.',
     galleryTitle: 'Prohlédněte si více',
+    secondFloorTitle: 'Druhé patro',
+    atticTitle: 'Podkroví',
 
     aboutEyebrow: 'Kdo jsme',
     aboutTitle: 'Příběh tohoto domu',
@@ -172,7 +176,7 @@ const translations = {
     nearbyText: '[Ivanův seznam nebo popis zajímavostí, výletů, měst a dopravy v okolí.]',
 
     contactLead: 'Máte dotaz nebo si chcete rezervovat pobyt? Vyplňte formulář níže a my se Vám ozveme zpět nejpozději do 24 hodin.',
-    contactDirect: 'Můžete nás také kontaktovat přímo na telefonu: +420 606 445 681 nebo e-mailem: kamenka.klasterec@gmail.com',
+    contactDirect: 'Můžete nás také kontaktovat přímo na telefonu: 606445681 nebo e-mailem: kamenka.klasterec@gmail.com',
     nameLabel: 'Jméno',
     emailLabel: 'E-mail',
     datesLabel: 'Termín, o který máte zájem',
@@ -186,7 +190,7 @@ const translations = {
     confirmationTitle: 'Dobrý den',
     confirmationText1: 'Děkujeme za váš zájem o ubytování v Kamence v Klášterci nad Ohří.',
     confirmationText2: 'Cenovou nabídku nebo potvrzení rezervace vám zašleme co nejdříve, obvykle do 24 hodin.',
-    confirmationText3: 'V případě urgentních dotazů nás můžete kontaktovat na telefonu: +420 606 445 681.',
+    confirmationText3: 'V případě urgentních dotazů nás můžete kontaktovat na telefonu: 606445681.',
     confirmationSignoff: 'S pozdravem, Kamenka tým',
     confirmationEmail: 'kamenka.klasterec@gmail.com',
     confirmationClose: 'Zavřít',

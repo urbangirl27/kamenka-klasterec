@@ -5,44 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kamenka Klasterec | A quiet retreat</title>
 <link rel="stylesheet" href="style.css">
-<style>
-/* Home photo composition — photographs retain their natural proportions. */
-.photo-section { padding: 1rem 0 4rem; }
-.photo-heading { text-align: center; margin: 0 0 2rem; }
-.photo-composition { display: flex; flex-direction: column; gap: 1rem; }
-.photo-composition img { width: 100%; height: auto; display: block; border-radius: 4px; }
-.entrance-master {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 1rem;
-  align-items: start;
-}
-.entrance-stack { display: flex; flex-direction: column; gap: 1rem; }
-.second-floor-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 1rem;
-  align-items: start;
-}
-.room-pair,
-.stair-washroom { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 1rem; align-items: start; }
-.bathroom-pair { display: flex; flex-direction: column; gap: 1rem; }
-.attic-composition {
-  columns: 2 320px;
-  column-gap: 1rem;
-}
-.attic-composition figure { break-inside: avoid; margin: 0 0 1rem; }
-.attic-composition img { margin: 0; }
-@media (max-width: 700px) {
-  .entrance-master,
-  .second-floor-row,
-  .room-pair,
-  .stair-washroom { grid-template-columns: 1fr; }
-  .attic-composition { columns: 1; }
-}
-</style>
 </head>
 <body data-page="home">
+
 <header class="site">
   <div class="wrap">
     <span class="logo">Kamenka Klasterec</span>
@@ -59,80 +24,71 @@
   <div class="wrap">
     <p class="eyebrow" data-i18n="homeEyebrow">A quiet retreat</p>
     <h1 data-i18n="homeTitle">Rest beneath the beams</h1>
-    <p class="lead" style="margin-bottom:1rem;" data-i18n="homeLead">[Ivan's introductory line about the property — what makes it special, and for whom.]</p>
+    <p class="lead" data-i18n="homeLead">[Ivan's introductory line about the property — what makes it special, and for whom.]</p>
     <a href="contact.html" class="btn" data-i18n="enquire">Enquire now</a>
   </div>
 </section>
 
+<section style="padding: 2rem 0 0;">
+  <div class="wrap" style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+    <img src="photos/entrance.jpg" alt="Entrance to the property" style="width:100%; border-radius:4px; display:block;">
+    <img src="photos/balcony-view.jpg" alt="View from the balcony" style="width:100%; border-radius:4px; display:block;">
+  </div>
+</section>
+
 <section class="split">
-  <div class="wrap" style="display:block;">
-    <div class="text" style="max-width:60ch; margin:0 auto;">
+  <div class="wrap" style="display:contents;">
+    <img src="photos/dining-room.jpg" alt="Dining room with exposed beams" style="width:100%; border-radius:4px; display:block;">
+    <div class="text" style="max-width:60ch;">
       <h2 style="margin-bottom:1rem;" data-i18n="homeCharacterTitle">White walls, old beams</h2>
       <p style="margin-bottom:1rem;" data-i18n="homeCharacterText">[Ivan's description of the property's character — the brick, the beams, what the space feels like to walk into.]</p>
-      <div class="placeholder-text" data-i18n="placeholderCopy">Placeholder — replace with Ivan's copy once received.</div>
     </div>
   </div>
 </section>
 
 <section class="split reverse">
-  <div class="wrap" style="display:block;">
-    <div class="text" style="max-width:60ch; margin:0 auto;">
+  <div class="wrap" style="display:contents;">
+    <div class="text" style="max-width:60ch;">
       <h2 style="margin-bottom:1rem;" data-i18n="homeComfortTitle">Comfortable, well equipped, and everything you need</h2>
       <p style="margin-bottom:1rem;" data-i18n="homeComfort1">We offer modern accommodation in a quiet building with flats across three storeys, making it an ideal choice for a group, for long-term stays, or for corporate travellers passing through.</p>
       <p style="margin-bottom:1rem;" data-i18n="homeComfort2">On the first floor, a separate apartment for three people includes a kitchen and a private bathroom with a shower and a toilet.</p>
       <p style="margin-bottom:1rem;" data-i18n="homeComfort3">The second floor and the attached attic hold three separate double rooms. The attic has its own private bathroom with a shower and a toilet. The second floor also has a spacious kitchen with a dining table, a television, and a private bathroom with a bathtub and a toilet, along with a utility room with a washing machine and dryer.</p>
       <p style="margin-bottom:1rem;" data-i18n="homeComfort4">The attic and second floor can be adapted to suit individual requirements, for up to ten people.</p>
     </div>
+    <img src="photos/kitchen.jpg" alt="Kitchen with brick backsplash" style="width:100%; border-radius:4px; display:block;">
   </div>
 </section>
 
-<section class="photo-section">
+<section style="padding: 1rem 0 3rem;">
   <div class="wrap">
-    <h2 class="photo-heading">Second Floor</h2>
-    <div class="photo-composition">
-
-      <!-- Entrance pair: horizontal entrance first, vertical entrance underneath; master bedroom balances the stack. -->
-      <div class="entrance-master">
-        <div class="entrance-stack">
-          <img src="photos/entrance.jpg" alt="Main entrance to the property" data-alt-en="Main entrance to the property" data-alt-cz="Hlavní vchod do ubytování">
-          <img src="photos/Entrance to the building.jpg" alt="Entrance to the building" data-alt-en="Entrance to the building" data-alt-cz="Vchod do budovy">
-        </div>
-        <img src="photos/master-bedroom.jpg" alt="Second-floor master bedroom" data-alt-en="Second-floor master bedroom" data-alt-cz="Hlavní ložnice ve druhém patře">
-      </div>
-
-      <div class="room-pair">
-        <img src="photos/single-bed.jpg" alt="Second-floor single bed" data-alt-en="Second-floor single bed" data-alt-cz="Jednolůžko ve druhém patře">
-        <img src="photos/dining-room.jpg" alt="Second-floor dining room" data-alt-en="Second-floor dining room" data-alt-cz="Jídelna ve druhém patře">
-      </div>
-
-      <div class="second-floor-row">
-        <img src="photos/kitchen.jpg" alt="Shared kitchen" data-alt-en="Shared kitchen" data-alt-cz="Společná kuchyně">
-        <img src="photos/balcony-view.jpg" alt="View from the second-floor balcony" data-alt-en="View from the second-floor balcony" data-alt-cz="Výhled z balkonu ve druhém patře">
-      </div>
-
-      <!-- The long staircase and the long bathroom composition sit beside one another. -->
-      <div class="stair-washroom">
-        <img src="photos/2nd fl staircase.jpg" alt="Second-floor staircase" data-alt-en="Second-floor staircase" data-alt-cz="Schodiště ve druhém patře">
-        <div class="bathroom-pair">
-          <img src="photos/bathroom.jpg" alt="Second-floor bathroom with bathtub" data-alt-en="Second-floor bathroom with bathtub" data-alt-cz="Koupelna ve druhém patře s vanou">
-          <img src="photos/vanity.jpg" alt="Second-floor bathroom vanity" data-alt-en="Second-floor bathroom vanity" data-alt-cz="Koupelnová skříňka s umyvadlem">
-        </div>
-      </div>
-
+    <h2 style="text-align:center; margin-bottom: 2rem;" data-i18n="secondFloorTitle">Second Floor</h2>
+    <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem;">
+      <img src="photos/Entrance to the building.jpg" alt="Entrance to the building" style="width:100%; border-radius:4px; display:block;">
+      <img src="photos/master-bedroom.jpg" alt="Master bedroom" style="width:100%; border-radius:4px; display:block;">
+    </div>
+    <div style="margin-bottom: 1rem;">
+      <img src="photos/single-bed.jpg" alt="Second bedroom" style="width:100%; border-radius:4px; display:block;">
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem;">
+      <img src="photos/bathroom.jpg" alt="Bathroom" style="width:100%; border-radius:4px; display:block;">
+      <img src="photos/vanity.jpg" alt="Bathroom vanity" style="width:100%; border-radius:4px; display:block;">
+    </div>
+    <div>
+      <img src="photos/2nd fl staircase.jpg" alt="Staircase to the second floor" style="width:100%; border-radius:4px; display:block;">
     </div>
   </div>
 </section>
 
-<section class="photo-section">
+<section style="padding: 1rem 0 4rem;">
   <div class="wrap">
-    <h2 class="photo-heading">Attic</h2>
-    <div class="attic-composition">
-      <figure><img src="photos/Attic-1st rm- 1st single bed_balcony side.jpg" alt="Attic first room, first single bed and balcony side" data-alt-en="Attic first room, first single bed and balcony side" data-alt-cz="První podkrovní pokoj, první jednolůžko a strana k balkonu"></figure>
-      <figure><img src="photos/Attic-1st rm- 2nd single bed view of window.jpg" alt="Attic first room, second single bed and window" data-alt-en="Attic first room, second single bed and window" data-alt-cz="První podkrovní pokoj, druhé jednolůžko a okno"></figure>
-      <figure><img src="photos/Attic-1st rm- 2nd single bed-closet and balcony side.jpg" alt="Attic first room, second single bed, closet and balcony side" data-alt-en="Attic first room, second single bed, closet and balcony side" data-alt-cz="První podkrovní pokoj, druhé jednolůžko, skříň a strana k balkonu"></figure>
-      <figure><img src="photos/Attic-1st rm- balcony door and desk.jpg" alt="Attic first room, balcony door and desk" data-alt-en="Attic first room, balcony door and desk" data-alt-cz="První podkrovní pokoj, balkonové dveře a pracovní stůl"></figure>
-      <figure><img src="photos/Attic 2nd room with 1 master-1 double beds and a desk.jpg" alt="Attic second room with beds and desk" data-alt-en="Attic second room with beds and desk" data-alt-cz="Druhý podkrovní pokoj s postelemi a pracovním stolem"></figure>
-      <figure><img src="photos/Attic shower.jpg" alt="Attic shower" data-alt-en="Attic shower" data-alt-cz="Sprcha v podkroví"></figure>
+    <h2 style="text-align:center; margin-bottom: 2rem;" data-i18n="atticTitle">Attic</h2>
+    <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+      <img src="photos/Attic 1st rm- 2nd single bed view of window.jpg" alt="Attic room, second single bed with window view" style="width:100%; border-radius:4px; display:block;">
+      <img src="photos/Attic 2nd room with 1 master-1 double beds and a desk.jpg" alt="Attic second room with master and double beds and a desk" style="width:100%; border-radius:4px; display:block;">
+      <img src="photos/Attic shower.jpg" alt="Attic shower" style="width:100%; border-radius:4px; display:block;">
+      <img src="photos/Attic-1st rm- 1st single bed_balcony side.jpg" alt="Attic room, first single bed, balcony side" style="width:100%; border-radius:4px; display:block;">
+      <img src="photos/Attic-1st rm- 2nd single bed-closet and balcony side.jpg" alt="Attic room, second single bed, closet and balcony side" style="width:100%; border-radius:4px; display:block;">
+      <img src="photos/Attic-1st rm- balcony door and desk.jpg" alt="Attic room, balcony door and desk" style="width:100%; border-radius:4px; display:block;">
     </div>
   </div>
 </section>
@@ -142,6 +98,8 @@
     &copy; Kamenka Klasterec — Chomutovská 209, Klášterec nad Ohří, 431 51, (Za nakládací rampou TESCA)
   </div>
 </footer>
+
 <script src="language.js"></script>
+
 </body>
 </html>
