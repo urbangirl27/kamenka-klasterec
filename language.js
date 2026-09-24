@@ -51,10 +51,10 @@ const translations = {
     sendButton: 'Send enquiry',
 
     confirmationTitle: 'Good day',
-    confirmationText1: 'Thank you for your interest in accommodation at Kamenka in Klášterec nad Ohří.',
-    confirmationText2: 'We will send you a quote or booking confirmation as soon as possible, usually within 24 hours.',
-    confirmationText3: 'For urgent questions, you can contact us by phone: +420 606 445 681.',
-    confirmationSignoff: 'Best regards, Kamenka team',
+    confirmationText1: 'Thank you very much for your interest in staying at Kamenka in Klášterec nad Ohří.',
+    confirmationText2: 'We have received your enquiry and will get back to you with a quotation or booking confirmation as soon as possible, usually within 24 hours.',
+    confirmationText3: 'Should you have any urgent questions in the meantime, please feel free to contact us by phone: +420 606 445 681.',
+    confirmationSignoff: 'We look forward to hearing from you and hope to welcome you to Kamenka soon.<br>Warm regards,<br>The Kamenka team',
     confirmationEmail: 'kamenka.klasterec@gmail.com',
     confirmationClose: 'Close',
 
