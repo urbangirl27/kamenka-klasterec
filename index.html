@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kamenka Klasterec | A quiet retreat</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.photo-layout { display:grid; gap:1rem; }
+.photo-layout img { width:100%; height:auto; border-radius:4px; display:block; }
+.photo-intro { display:grid; grid-template-columns:1fr 1fr; gap:1rem; align-items:stretch; }
+.photo-intro .stack { display:grid; grid-template-rows:auto auto; gap:1rem; }
+.photo-pair { display:grid; grid-template-columns:1fr 1fr; gap:1rem; align-items:start; }
+.photo-triptych { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.photo-rooms { display:grid; grid-template-columns:1fr 1fr; gap:1rem; align-items:start; }
+.photo-column { display:grid; gap:1rem; align-content:start; }
+@media (max-width: 760px) {
+  .photo-intro,.photo-pair,.photo-triptych,.photo-rooms { grid-template-columns:1fr; }
+}
+</style>
 </head>
 <body data-page="home">
 <header class="site">
@@ -13,7 +26,6 @@
     <nav class="main">
       <a href="index.html" class="active" data-i18n="navHome">Home</a>
       <a href="about.html" data-i18n="navAbout">About Us</a>
-      <a href="location.html" data-i18n="navLocation">Location</a>
       <a href="contact.html" data-i18n="navContact">Contact</a>
     </nav>
   </div>
@@ -48,25 +60,54 @@
     <img src="photos/kitchen.jpg" alt="Kitchen with brick backsplash" data-alt-en="Kitchen with brick backsplash" data-alt-cz="Kuchyň s cihlovým obkladem" style="width:100%; border-radius:4px; display:block;">
   </div>
 </section>
-<section style="padding: 1rem 0 4rem;">
+<section style="padding:1rem 0 4rem;">
   <div class="wrap">
-    <h2 style="text-align:center; margin-bottom: 2rem;" data-i18n="galleryTitle">A closer look</h2>
-    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-      <img src="photos/entrance.jpg" alt="Entrance to the property" data-alt-en="Entrance to the property" data-alt-cz="Vchod do ubytování" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/Entrance to the building.jpg" alt="Entrance to the building" data-alt-en="Entrance to the building" data-alt-cz="Vchod do budovy" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/master-bedroom.jpg" alt="Second-floor master bedroom" data-alt-en="Second-floor master bedroom" data-alt-cz="Hlavní ložnice ve druhém patře" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/single-bed.jpg" alt="Second-floor bedroom" data-alt-en="Second-floor bedroom" data-alt-cz="Ložnice ve druhém patře" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/staircase.jpg" alt="Staircase" data-alt-en="Staircase" data-alt-cz="Schodiště" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/2nd fl staircase.jpg" alt="Second-floor staircase" data-alt-en="Second-floor staircase" data-alt-cz="Schodiště ve druhém patře" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/bathroom.jpg" alt="Second-floor bathroom with bathtub" data-alt-en="Second-floor bathroom with bathtub" data-alt-cz="Koupelna ve druhém patře s vanou" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/vanity.jpg" alt="Bathroom vanity" data-alt-en="Bathroom vanity" data-alt-cz="Koupelnová skříňka s umyvadlem" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/balcony-view.jpg" alt="View from the second-floor balcony" data-alt-en="View from the second-floor balcony" data-alt-cz="Výhled z balkonu ve druhém patře" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/Attic 1st rm- 2nd single bed view of window.jpg" alt="Attic room with single bed and window view" data-alt-en="Attic room with single bed and window view" data-alt-cz="Podkrovní pokoj s jednolůžkem a výhledem z okna" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/Attic 2nd room with 1 master-1 double beds and a desk.jpg" alt="Attic room with beds and desk" data-alt-en="Attic room with beds and desk" data-alt-cz="Podkrovní pokoj s postelemi a pracovním stolem" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/Attic shower.jpg" alt="Attic shower" data-alt-en="Attic shower" data-alt-cz="Sprcha v podkroví" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/Attic-1st rm- 1st single bed_balcony side.jpg" alt="Attic room with single bed and balcony side" data-alt-en="Attic room with single bed and balcony side" data-alt-cz="Podkrovní pokoj s jednolůžkem a stranou k balkonu" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/Attic-1st rm- 2nd single bed-closet and balcony side.jpg" alt="Attic room with single bed, closet and balcony side" data-alt-en="Attic room with single bed, closet and balcony side" data-alt-cz="Podkrovní pokoj s jednolůžkem, skříní a stranou k balkonu" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/Attic-1st rm- balcony door and desk.jpg" alt="Attic room with balcony door and desk" data-alt-en="Attic room with balcony door and desk" data-alt-cz="Podkrovní pokoj s balkonovými dveřmi a pracovním stolem" style="width:100%; border-radius:4px; display:block;">
+    <h2 style="text-align:center; margin-bottom:2rem;" data-i18n="galleryTitle">A closer look</h2>
+
+    <div class="photo-layout">
+      <div class="photo-intro">
+        <div class="stack">
+          <img src="photos/entrance.jpg" alt="Main entrance to the property" data-alt-en="Main entrance to the property" data-alt-cz="Hlavní vchod do ubytování">
+          <img src="photos/Entrance to the building.jpg" alt="Entrance to the building" data-alt-en="Entrance to the building" data-alt-cz="Vchod do budovy">
+        </div>
+        <img src="photos/master-bedroom.jpg" alt="Second-floor master bedroom" data-alt-en="Second-floor master bedroom" data-alt-cz="Hlavní ložnice ve druhém patře">
+      </div>
+
+      <div class="photo-pair">
+        <img src="photos/bathroom.jpg" alt="Second-floor bathroom with bathtub" data-alt-en="Second-floor bathroom with bathtub" data-alt-cz="Koupelna ve druhém patře s vanou">
+        <img src="photos/2nd fl staircase.jpg" alt="Second-floor staircase" data-alt-en="Second-floor staircase" data-alt-cz="Schodiště ve druhém patře">
+      </div>
+
+      <div class="photo-pair">
+        <img src="photos/vanity.jpg" alt="Bathroom vanity" data-alt-en="Bathroom vanity" data-alt-cz="Koupelnová skříňka s umyvadlem">
+      </div>
+
+      <div class="photo-rooms">
+        <div class="photo-column">
+          <img src="photos/single-bed.jpg" alt="Second-floor bedroom" data-alt-en="Second-floor bedroom" data-alt-cz="Ložnice ve druhém patře">
+          <img src="photos/balcony-view.jpg" alt="View from the second-floor balcony" data-alt-en="View from the second-floor balcony" data-alt-cz="Výhled z balkonu ve druhém patře">
+        </div>
+        <div class="photo-column">
+          <img src="photos/Attic 2nd room with 1 master-1 double beds and a desk.jpg" alt="Attic room with beds and desk" data-alt-en="Attic room with beds and desk" data-alt-cz="Podkrovní pokoj s postelemi a pracovním stolem">
+          <img src="photos/Attic shower.jpg" alt="Attic shower" data-alt-en="Attic shower" data-alt-cz="Sprcha v podkroví">
+        </div>
+      </div>
+
+      <div class="photo-triptych">
+        <img src="photos/Attic-1st rm- 1st single bed_balcony side.jpg" alt="Attic room with first single bed and balcony side" data-alt-en="Attic room with first single bed and balcony side" data-alt-cz="Podkrovní pokoj s prvním jednolůžkem a stranou k balkonu">
+        <img src="photos/Attic-1st rm- 2nd single bed-closet and balcony side.jpg" alt="Attic room with second single bed, closet and balcony side" data-alt-en="Attic room with second single bed, closet and balcony side" data-alt-cz="Podkrovní pokoj s druhým jednolůžkem, skříní a stranou k balkonu">
+        <img src="photos/Attic-1st rm- balcony door and desk.jpg" alt="Attic room with balcony door and desk" data-alt-en="Attic room with balcony door and desk" data-alt-cz="Podkrovní pokoj s balkonovými dveřmi a pracovním stolem">
+      </div>
+
+      <div class="photo-pair">
+        <img src="photos/Attic 1st rm- 2nd single bed view of window.jpg" alt="Attic room with second single bed and window view" data-alt-en="Attic room with second single bed and window view" data-alt-cz="Podkrovní pokoj s druhým jednolůžkem a výhledem z okna">
+        <img src="photos/Eger River-the Ohře River.jpg" alt="The Ohře River in Klášterec nad Ohří" data-alt-en="The Ohře River in Klášterec nad Ohří" data-alt-cz="Řeka Ohře v Klášterci nad Ohří">
+      </div>
+
+      <div class="photo-pair">
+        <img src="photos/Klášterec nad Ohří Chateau-Zámek Klášterec nad Ohří.jpg" alt="Klášterec nad Ohří Chateau" data-alt-en="Klášterec nad Ohří Chateau" data-alt-cz="Zámek Klášterec nad Ohří">
+        <img src="photos/park-view of the Chateau.jpg" alt="Park surrounding Klášterec nad Ohří Chateau" data-alt-en="Park surrounding Klášterec nad Ohří Chateau" data-alt-cz="Park u zámku Klášterec nad Ohří">
+      </div>
     </div>
   </div>
 </section>
