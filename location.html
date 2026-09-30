@@ -5,6 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Location | Kamenka Klasterec</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* Location page — scoped layout only. Photographs keep their true proportions. */
+.location-gallery-wrap {
+  padding: 1.5rem 0 0;
+}
+.location-gallery {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+.location-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.location-copy {
+  width: min(760px, calc(100% - 2rem));
+  margin: 2.75rem auto 0;
+  padding-bottom: 4rem;
+  text-align: left;
+}
+.location-copy h2 {
+  margin: 2rem 0 0.9rem;
+}
+.location-copy p {
+  margin: 0 0 1rem;
+}
+@media (max-width: 900px) {
+  .location-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .location-copy { transform: none; }
+}
+@media (max-width: 600px) {
+  .location-gallery { grid-template-columns: 1fr; }
+  .location-copy { width: calc(100% - 2rem); }
+}
+</style>
 </head>
 <body data-page="location">
 <header class="site">
@@ -18,54 +59,75 @@
     </nav>
   </div>
 </header>
+
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow" data-i18n="locationEyebrow">Explore the surroundings</p>
+    <p class="eyebrow" data-i18n="locationEyebrow">Explore the surroundings of Kamenka</p>
     <h1 data-i18n="locationTitle">Discover Klášterec nad Ohří</h1>
   </div>
 </section>
-<section style="padding: 1rem 0 4rem;">
+
+<section class="location-gallery-wrap">
   <div class="wrap">
-    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-      <img class="lightbox-trigger" src="photos/Eger River-the Ohře River.jpg" alt="The Ohře River in Klášterec nad Ohří" data-alt-en="The Ohře River in Klášterec nad Ohří" data-alt-cz="Řeka Ohře v Klášterci nad Ohří" style="width:100%; border-radius:4px; display:block;">
-      <img class="lightbox-trigger" src="photos/Klášterec nad Ohří Chateau-Zámek Klášterec nad Ohří.jpg" alt="Klášterec nad Ohří Chateau" data-alt-en="Klášterec nad Ohří Chateau" data-alt-cz="Zámek Klášterec nad Ohří" style="width:100%; border-radius:4px; display:block;">
-      <img class="lightbox-trigger" src="photos/park-view of the Chateau.jpg" alt="Park surrounding Klášterec nad Ohří Chateau" data-alt-en="Park surrounding Klášterec nad Ohří Chateau" data-alt-cz="Park u zámku Klášterec nad Ohří" style="width:100%; border-radius:4px; display:block;">
+    <div class="location-gallery">
+      <img class="lightbox-trigger" src="photos/Eger River-the Ohře River.jpg" alt="The Ohře River in Klášterec nad Ohří" data-alt-en="The Ohře River in Klášterec nad Ohří" data-alt-cz="Řeka Ohře v Klášterci nad Ohří">
+      <img class="lightbox-trigger" src="photos/Klášterec nad Ohří Chateau-Zámek Klášterec nad Ohří.jpg" alt="Klášterec nad Ohří Chateau" data-alt-en="Klášterec nad Ohří Chateau" data-alt-cz="Zámek Klášterec nad Ohří">
+      <img class="lightbox-trigger" src="photos/park-view of the Chateau.jpg" alt="Park surrounding Klášterec nad Ohří Chateau" data-alt-en="Park surrounding Klášterec nad Ohří Chateau" data-alt-cz="Park u zámku Klášterec nad Ohří">
+    </div>
+
+    <div class="location-copy">
+      <p data-i18n="locationLead">Explore the Ohře River while visiting Klášterec nad Ohří Chateau and its beautiful surrounding park. The town and its surroundings offer a peaceful setting to explore, unwind and enjoy the landscape.</p>
+      <h2 data-i18n="nearbyTitle">What is nearby</h2>
+      <p data-i18n="locationNearby">For everyday essentials, Lidl and Tesco are both approximately 300 metres from Kamenka. A pizzeria and bistro are also nearby, making it easy to find something to eat without going far.</p>
     </div>
   </div>
 </section>
-    <div class="text" style="width:100%; margin:2rem 0 0; text-align:left;">
-      <p style="margin-bottom:1rem;" data-i18n="locationLead">Explore the Ohře River while visiting Klášterec nad Ohří Chateau and its beautiful surrounding park. The town and its surroundings offer a peaceful setting to explore, unwind and enjoy the landscape.</p>
-      <p style="margin-bottom:1rem;" data-i18n="locationNearby">For everyday essentials, Lidl and Tesco are both approximately 300 metres from Kamenka. A pizzeria and bistro are also nearby, making it easy to find something to eat without going far.</p>
-    </div>
-  </div>
-</section>
+
 <footer class="site">
   <div class="wrap">
     &copy; Kamenka Klasterec — Chomutovská 209, Klášterec nad Ohří, 431 51, (Za nakládací rampou TESCA)
   </div>
 </footer>
-<script src="language.js"></script>
 
-<div class="lightbox-overlay" id="lightbox">
-  <button class="lightbox-close" id="lightbox-close">&times;</button>
-  <img src="" alt="" id="lightbox-img">
-</div>
+<script src="language.js"></script>
 <script>
-(function(){
-  var overlay = document.getElementById('lightbox');
-  var img = document.getElementById('lightbox-img');
-  var close = document.getElementById('lightbox-close');
-  document.querySelectorAll('img.lightbox-trigger').forEach(function(el){
-    el.addEventListener('click', function(){
-      img.src = el.src;
-      img.alt = el.alt;
-      overlay.classList.add('active');
+/* Keeps the Location page bilingual even if an older language.js is deployed. */
+(function () {
+  const locationTranslations = {
+    en: {
+      eyebrow: 'Explore the surroundings of Kamenka',
+      title: 'Discover Klášterec nad Ohří',
+      lead: 'Explore the Ohře River while visiting Klášterec nad Ohří Chateau and its beautiful surrounding park. The town and its surroundings offer a peaceful setting to explore, unwind and enjoy the landscape.',
+      nearbyTitle: 'What is nearby',
+      nearby: 'For everyday essentials, Lidl and Tesco are both approximately 300 metres from Kamenka. A pizzeria and bistro are also nearby, making it easy to find something to eat without going far.'
+    },
+    cz: {
+      eyebrow: 'Prozkoumejte okolí Kamenky',
+      title: 'Objevte Klášterec nad Ohří',
+      lead: 'Prozkoumejte řeku Ohři při návštěvě zámku Klášterec nad Ohří a jeho krásného okolního parku. Město a jeho okolí nabízejí klidné prostředí k poznávání, odpočinku a vychutnání si zdejší krajiny.',
+      nearbyTitle: 'Co je v okolí',
+      nearby: 'Pro každodenní nákupy jsou Lidl a Tesco přibližně 300 metrů od Kamenky. Nedaleko se nachází také pizzerie a bistro, takže se můžete snadno najíst, aniž byste museli chodit daleko.'
+    }
+  };
+
+  function updateLocation() {
+    const lang = localStorage.getItem('kamenkaLanguage') === 'cz' ? 'cz' : 'en';
+    const t = locationTranslations[lang];
+    document.querySelector('[data-i18n="locationEyebrow"]').textContent = t.eyebrow;
+    document.querySelector('[data-i18n="locationTitle"]').textContent = t.title;
+    document.querySelector('[data-i18n="locationLead"]').textContent = t.lead;
+    document.querySelector('[data-i18n="nearbyTitle"]').textContent = t.nearbyTitle;
+    document.querySelector('[data-i18n="locationNearby"]').textContent = t.nearby;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    updateLocation();
+    document.querySelectorAll('[data-language]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        setTimeout(updateLocation, 0);
+      });
     });
   });
-  close.addEventListener('click', function(e){ e.stopPropagation(); overlay.classList.remove('active'); });
-  overlay.addEventListener('click', function(){ overlay.classList.remove('active'); });
-  img.addEventListener('click', function(e){ e.stopPropagation(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') overlay.classList.remove('active'); });
 })();
 </script>
 </body>
