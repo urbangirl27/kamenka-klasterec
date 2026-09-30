@@ -34,7 +34,7 @@
 </section>
 <section class="split">
   <div class="wrap" style="display:contents;">
-    <img src="photos/dining-room.jpg" alt="Dining room with exposed beams" data-alt-en="Dining room with exposed beams" data-alt-cz="Jídelna s odhalenými trámy" style="width:100%; border-radius:4px; display:block;">
+    <img class="feature-photo dining-photo" src="photos/dining-room.jpg" alt="Dining room with exposed beams" data-alt-en="Dining room with exposed beams" data-alt-cz="Jídelna s odhalenými trámy" style="border-radius:4px; display:block;">
     <div class="text" style="max-width:60ch;">
       <h2 style="margin-bottom:1rem;" data-i18n="homeCharacterTitle">Open space with character</h2>
       <p style="margin-bottom:1rem;" data-i18n="homeCharacterText">A former warehouse from the age of Bohemia’s great porcelain makers, Kamenka has been thoughtfully converted into warm, rustic accommodation. White walls, exposed brick and substantial wooden beams give the space its distinctive character, while the open-plan living and dining area leads out onto a balcony overlooking the surroundings.</p>
@@ -50,7 +50,7 @@
       <p style="margin-bottom:1rem;" data-i18n="homeComfort3">The second floor and the attached attic hold three separate double rooms. The attic has its own private bathroom with a shower and a toilet. The second floor also has a spacious kitchen with a dining table, a television, and a private bathroom with a bathtub and a toilet, along with a utility room with a washing machine and dryer.</p>
       <p style="margin-bottom:1rem;" data-i18n="homeComfort4">The attic and second floor can be adapted to suit individual requirements, for up to ten people.</p>
     </div>
-    <img src="photos/kitchen.jpg" alt="Kitchen with brick backsplash" data-alt-en="Kitchen with brick backsplash" data-alt-cz="Kuchyň s cihlovým obkladem" style="width:100%; border-radius:4px; display:block;">
+    <img class="feature-photo kitchen-photo" src="photos/kitchen.jpg" alt="Kitchen with brick backsplash" data-alt-en="Kitchen with brick backsplash" data-alt-cz="Kuchyň s cihlovým obkladem" style="border-radius:4px; display:block;">
   </div>
 </section>
 <section style="padding: 1rem 0 4rem;">
@@ -88,6 +88,42 @@
     &copy; Kamenka Klasterec — Chomutovská 209, Klášterec nad Ohří, 431 51, (Za nakládací rampou TESCA)
   </div>
 </footer>
+<div id="photo-lightbox" class="photo-lightbox" aria-hidden="true">
+  <button type="button" class="photo-lightbox-close" aria-label="Close enlarged photo">&times;</button>
+  <img id="photo-lightbox-image" src="" alt="">
+</div>
 <script src="language.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const lightbox = document.getElementById('photo-lightbox');
+  const lightboxImage = document.getElementById('photo-lightbox-image');
+  const closeButton = lightbox.querySelector('.photo-lightbox-close');
+  document.querySelectorAll('img[src^="photos/"]').forEach(function (photo) {
+    photo.classList.add('clickable-photo');
+    photo.setAttribute('tabindex', '0');
+    photo.setAttribute('role', 'button');
+    function openPhoto() {
+      lightboxImage.src = photo.src;
+      lightboxImage.alt = photo.alt;
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
+    }
+    photo.addEventListener('click', openPhoto);
+    photo.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openPhoto(); }
+    });
+  });
+  function closePhoto() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+    lightboxImage.src = '';
+  }
+  closeButton.addEventListener('click', closePhoto);
+  lightbox.addEventListener('click', function (event) { if (event.target === lightbox) closePhoto(); });
+  document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && lightbox.classList.contains('is-open')) closePhoto(); });
+});
+</script>
 </body>
 </html>
