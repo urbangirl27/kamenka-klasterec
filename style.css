@@ -91,6 +91,17 @@ section.split {
   gap: 3rem;
   align-items: center;
 }
+
+/* The two source photographs have different aspect ratios.
+   Give them the same visual height on desktop without cropping or stretching. */
+section.split .feature-photo {
+  height: 500px;
+  width: auto !important;
+  max-width: 100%;
+  object-fit: contain;
+  justify-self: center;
+}
+
 section.split.reverse .text { order: 2; }
 section.split.reverse .photo-placeholder { order: 1; }
 
@@ -112,9 +123,22 @@ footer.site {
   color: var(--body);
 }
 
+@media (max-width: 900px) and (min-width: 681px) {
+  section.split .feature-photo {
+    height: auto;
+    width: 100% !important;
+    max-height: 500px;
+  }
+}
+
 @media (max-width: 680px) {
   h1 { font-size: 2rem; }
   section.split, section.split.reverse { grid-template-columns: 1fr; }
+  section.split .feature-photo {
+    width: 100% !important;
+    height: auto;
+    max-width: 100%;
+  }
   section.split.reverse .text, section.split.reverse .photo-placeholder { order: unset; }
   nav.main { display: flex; gap: 1rem; margin-left: 0; }
   nav.main a { margin-left: 0; }
