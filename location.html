@@ -11,7 +11,7 @@
   padding: 1.5rem 0 0;
 }
 .location-gallery {
-  width: min(900px, 100%);
+  width: min(1050px, 100%);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -33,6 +33,7 @@
 }
 .location-copy h2 {
   margin: 2rem 0 0.9rem;
+  text-align: center;
 }
 .location-copy p {
   margin: 0 0 1rem;
@@ -44,6 +45,30 @@
 @media (max-width: 600px) {
   .location-gallery { grid-template-columns: 1fr; }
   .location-copy { width: calc(100% - 2rem); }
+}
+</style>
+
+<style>
+.location-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.88);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.location-lightbox img {
+  max-width: 92vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  cursor: default;
 }
 </style>
 </head>
@@ -88,6 +113,9 @@
     &copy; Kamenka Klasterec — Chomutovská 209, Klášterec nad Ohří, 431 51, (Za nakládací rampou TESCA)
   </div>
 </footer>
+<div class="location-lightbox" id="location-lightbox" aria-hidden="true">
+  <img id="location-lightbox-image" src="" alt="">
+</div>
 
 <script src="language.js"></script>
 <script>
@@ -126,6 +154,38 @@
       button.addEventListener('click', function () {
         setTimeout(updateLocation, 0);
       });
+    });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    const box = document.getElementById('location-lightbox');
+    const image = document.getElementById('location-lightbox-image');
+    if (!box || !image) return;
+    document.querySelectorAll('.location-gallery .lightbox-trigger').forEach(function (thumb) {
+      thumb.addEventListener('click', function () {
+        image.src = thumb.src;
+        image.alt = thumb.alt;
+        box.style.display = 'flex';
+        box.setAttribute('aria-hidden', 'false');
+      });
+    });
+    box.addEventListener('click', function (event) {
+      if (event.target === box) {
+        box.style.display = 'none';
+        image.src = '';
+        box.setAttribute('aria-hidden', 'true');
+      }
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        box.style.display = 'none';
+        image.src = '';
+        box.setAttribute('aria-hidden', 'true');
+      }
     });
   });
 })();
