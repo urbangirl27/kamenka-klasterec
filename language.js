@@ -32,7 +32,7 @@ const translations = {
     aboutText3: 'Production finally moved from this old centre in 1967, to a new and modern plant on the outskirts of Klášterec, towards Kadaň. The old porcelain factory complex in the centre was gradually demolished, and the last remains of its buildings and chimneys were removed by controlled demolition in 2001.',
     aboutText4: 'The site of the original factory is now largely occupied by Lidl and Tesco stores, behind which our building stands.',
 
-    locationEyebrow: 'Explore the surroundings of Kamenka',
+    locationEyebrow: 'Explore the surroundings',
     locationTitle: 'Discover Klášterec nad Ohří',
     locationLead: 'Explore the Ohře River while visiting Klášterec nad Ohří Chateau and its beautiful surrounding park. The town and its surroundings offer a peaceful setting to explore, unwind and enjoy the landscape.',
     nearbyTitle: 'What is nearby',
@@ -146,10 +146,10 @@ const translations = {
 
     homeEyebrow: 'Klidné útočiště',
     homeTitle: 'Odpočiňte si v pohodlí pod rustikálními dřevěnými trámy',
-    homeLead: 'Kamenka nabízí prostorné a pohodlné ubytování v charakteristické historické budově v Klášterci nad Ohří. Odhalené cihly, mohutné dřevěné trámy a dostatek prostoru vytvářejí příjemné zázemí pro firemní cestující a delší pracovní pobyty i pro rodiny, přátele a návštěvníky, kteří chtějí poznat okolí.',
+    homeLead: 'Kamenka nabízí prostorné a pohodlné ubytování v charakteristické historické budově v Klášterci nad Ohří. Odkryté cihly, mohutné dřevěné trámy a dostatek prostoru vytvářejí příjemné zázemí pro firemní cestující a delší pracovní pobyty, stejně jako pro rodiny, přátele a návštěvníky okolí.',
     enquire: 'Nezávazná poptávka',
     homeCharacterTitle: 'Otevřený prostor s charakterem',
-    homeCharacterText: 'Kamenka, původně sklad z doby velkého rozmachu českého porcelánářství, byla citlivě přeměněna na teplé a rustikální ubytování. Bílé stěny, odhalené cihly a mohutné dřevěné trámy dodávají prostoru jeho osobitý charakter, zatímco otevřený obývací a jídelní prostor vede na balkon s výhledem do okolí.',
+    homeCharacterText: 'Bývalý sklad z doby velkých českých porcelánek byl citlivě přeměněn na útulné rustikální ubytování. Bílé stěny, odhalené cihly a mohutné dřevěné trámy dodávají prostoru jeho osobitý charakter, zatímco otevřený obývací a jídelní prostor navazuje na balkon s výhledem do okolí.',
     placeholderCopy: 'Zástupný text — bude nahrazen Ivanovým textem po jeho obdržení.',
     homeComfortTitle: 'Pohodlné, dobře vybavené a se vším, co potřebujete',
     homeComfort1: 'Nabízíme moderní ubytování v klidné budově s apartmány rozmístěnými ve třech podlažích. Je ideální pro skupiny, delší pobyty i firemní cestující.',
@@ -166,12 +166,12 @@ const translations = {
     aboutText3: 'Výroba se z tohoto starého centra definitivně přestěhovala v roce 1967 do nového a moderního závodu na okraji Klášterce směrem na Kadaň. Starý komplex porcelánky v centru byl postupně demolován a poslední zbytky budov a komínů byly odstraněny řízeným odstřelem v roce 2001.',
     aboutText4: 'Na místě původní továrny dnes z velké části stojí prodejny Lidl a Tesco. Za nimi se nachází naše budova.',
 
-    locationEyebrow: 'Prozkoumejte okolí Kamenky',
+    locationEyebrow: 'Prozkoumejte okolí',
     locationTitle: 'Objevte Klášterec nad Ohří',
-    locationLead: 'Při návštěvě Klášterce nad Ohří můžete prozkoumat řeku Ohři, zámek Klášterec nad Ohří a jeho krásný přilehlý park. Město a jeho okolí nabízejí klidné prostředí k poznávání, odpočinku a vychutnání zdejší krajiny.',
+    locationLead: 'Prozkoumejte řeku Ohři při návštěvě zámku Klášterec nad Ohří a jeho krásného okolního parku. Město a jeho okolí nabízejí klidné prostředí k poznávání, odpočinku a vychutnání si zdejší krajiny.',
     nearbyTitle: 'Co je v okolí',
-    nearbyText: 'Pro každodenní nákupy jsou Lidl a Tesco vzdálené od Kamenky přibližně 300 metrů. V blízkosti se nachází také pizzerie a bistro, takže si můžete snadno zajít něco k jídlu, aniž byste museli chodit daleko.',
-    locationNearby: 'Pro každodenní nákupy jsou Lidl a Tesco vzdálené od Kamenky přibližně 300 metrů. V blízkosti se nachází také pizzerie a bistro, takže si můžete snadno zajít něco k jídlu, aniž byste museli chodit daleko.',
+    nearbyText: 'Pro každodenní nákupy jsou Lidl a Tesco přibližně 300 metrů od Kamenky. Nedaleko se nachází také pizzerie a bistro, takže se můžete snadno najíst, aniž byste museli chodit daleko.',
+    locationNearby: 'Pro každodenní nákupy jsou Lidl a Tesco přibližně 300 metrů od Kamenky. Nedaleko se nachází také pizzerie a bistro, takže se můžete snadno najíst, aniž byste museli chodit daleko.',
 
     contactLead: 'Máte dotaz nebo si chcete rezervovat pobyt? Vyplňte formulář níže a my se Vám ozveme zpět nejpozději do 24 hodin.',
     contactDirect: 'Můžete nás také kontaktovat přímo na telefonu: +420 606 445 681 nebo e-mailem: kamenka.klasterec@gmail.com',
