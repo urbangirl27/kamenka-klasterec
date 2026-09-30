@@ -13,6 +13,7 @@
     <nav class="main">
       <a href="index.html" data-i18n="navHome">Home</a>
       <a href="about.html" class="active" data-i18n="navAbout">About Us</a>
+      <a href="location.html" data-i18n="navLocation">Location</a>
       <a href="contact.html" data-i18n="navContact">Contact</a>
     </nav>
   </div>
@@ -25,7 +26,7 @@
 </section>
 <section class="split">
   <div class="wrap" style="display:contents;">
-    <img src="photos/historical-view.png" alt="Historical view of the area" data-alt-en="Historical view of the area" data-alt-cz="Historický pohled na okolí" style="width:100%; border-radius:4px; display:block;">
+    <img class="lightbox-trigger" src="photos/historical-view.png" alt="Historical view of the area" data-alt-en="Historical view of the area" data-alt-cz="Historický pohled na okolí" style="width:100%; border-radius:4px; display:block;">
     <div class="text" style="max-width:60ch;">
       <h2 style="margin-bottom:1rem;" data-i18n="aboutHistoryTitle">A little history behind Kamenka</h2>
       <p style="margin-bottom:1rem;" data-i18n="aboutText1">The original factory buildings of the second oldest porcelain factory in Bohemia, founded in 1794, once stood in the city centre along what is now Chomutovská Street, in the very place where Kamenka Street now runs. Factory walls first rose beside these historic streets at the end of the eighteenth century.</p>
@@ -41,5 +42,28 @@
   </div>
 </footer>
 <script src="language.js"></script>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">&times;</button>
+  <img src="" alt="" id="lightbox-img">
+</div>
+<script>
+(function(){
+  var overlay = document.getElementById('lightbox');
+  var img = document.getElementById('lightbox-img');
+  var close = document.getElementById('lightbox-close');
+  document.querySelectorAll('img.lightbox-trigger').forEach(function(el){
+    el.addEventListener('click', function(){
+      img.src = el.src;
+      img.alt = el.alt;
+      overlay.classList.add('active');
+    });
+  });
+  close.addEventListener('click', function(e){ e.stopPropagation(); overlay.classList.remove('active'); });
+  overlay.addEventListener('click', function(){ overlay.classList.remove('active'); });
+  img.addEventListener('click', function(e){ e.stopPropagation(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') overlay.classList.remove('active'); });
+})();
+</script>
 </body>
 </html>

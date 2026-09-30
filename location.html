@@ -20,20 +20,16 @@
 </header>
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow" data-i18n="locationEyebrow">Explore the surroundings of Kamenka</p>
+    <p class="eyebrow" data-i18n="locationEyebrow">Explore the surroundings</p>
     <h1 data-i18n="locationTitle">Discover Klášterec nad Ohří</h1>
   </div>
 </section>
 <section style="padding: 1rem 0 4rem;">
   <div class="wrap">
     <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-      <img src="photos/Eger River-the Ohře River.jpg" alt="The Ohře River in Klášterec nad Ohří" data-alt-en="The Ohře River in Klášterec nad Ohří" data-alt-cz="Řeka Ohře v Klášterci nad Ohří" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/Klášterec nad Ohří Chateau-Zámek Klášterec nad Ohří.jpg" alt="Klášterec nad Ohří Chateau" data-alt-en="Klášterec nad Ohří Chateau" data-alt-cz="Zámek Klášterec nad Ohří" style="width:100%; border-radius:4px; display:block;">
-      <img src="photos/park-view of the Chateau.jpg" alt="Park surrounding Klášterec nad Ohří Chateau" data-alt-en="Park surrounding Klášterec nad Ohří Chateau" data-alt-cz="Park u zámku Klášterec nad Ohří" style="width:100%; border-radius:4px; display:block;">
-    </div>
-    <div class="text" style="width:100%; margin:2rem 0 0; text-align:left;">
-      <p style="margin-bottom:1rem;" data-i18n="locationLead">Explore the Ohře River while visiting Klášterec nad Ohří Chateau and its beautiful surrounding park. The town and its surroundings offer a peaceful setting to explore, unwind and enjoy the landscape.</p>
-      <p style="margin-bottom:1rem;" data-i18n="locationNearby">For everyday essentials, Lidl and Tesco are both approximately 300 metres from Kamenka. A pizzeria and bistro are also nearby, making it easy to find something to eat without going far.</p>
+      <img class="lightbox-trigger" src="photos/Eger River-the Ohře River.jpg" alt="The Ohře River in Klášterec nad Ohří" data-alt-en="The Ohře River in Klášterec nad Ohří" data-alt-cz="Řeka Ohře v Klášterci nad Ohří" style="width:100%; border-radius:4px; display:block;">
+      <img class="lightbox-trigger" src="photos/Klášterec nad Ohří Chateau-Zámek Klášterec nad Ohří.jpg" alt="Klášterec nad Ohří Chateau" data-alt-en="Klášterec nad Ohří Chateau" data-alt-cz="Zámek Klášterec nad Ohří" style="width:100%; border-radius:4px; display:block;">
+      <img class="lightbox-trigger" src="photos/park-view of the Chateau.jpg" alt="Park surrounding Klášterec nad Ohří Chateau" data-alt-en="Park surrounding Klášterec nad Ohří Chateau" data-alt-cz="Park u zámku Klášterec nad Ohří" style="width:100%; border-radius:4px; display:block;">
     </div>
   </div>
 </section>
@@ -43,5 +39,28 @@
   </div>
 </footer>
 <script src="language.js"></script>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">&times;</button>
+  <img src="" alt="" id="lightbox-img">
+</div>
+<script>
+(function(){
+  var overlay = document.getElementById('lightbox');
+  var img = document.getElementById('lightbox-img');
+  var close = document.getElementById('lightbox-close');
+  document.querySelectorAll('img.lightbox-trigger').forEach(function(el){
+    el.addEventListener('click', function(){
+      img.src = el.src;
+      img.alt = el.alt;
+      overlay.classList.add('active');
+    });
+  });
+  close.addEventListener('click', function(e){ e.stopPropagation(); overlay.classList.remove('active'); });
+  overlay.addEventListener('click', function(){ overlay.classList.remove('active'); });
+  img.addEventListener('click', function(e){ e.stopPropagation(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') overlay.classList.remove('active'); });
+})();
+</script>
 </body>
 </html>
