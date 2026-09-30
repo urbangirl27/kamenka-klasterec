@@ -37,6 +37,7 @@ const translations = {
     locationLead: 'Explore the Ohře River while visiting Klášterec nad Ohří Chateau and its beautiful surrounding park. The town and its surroundings offer a peaceful setting to explore, unwind and enjoy the landscape.',
     nearbyTitle: 'What is nearby',
     nearbyText: 'For everyday essentials, Lidl and Tesco are both approximately 300 metres from Kamenka. A pizzeria and bistro are also nearby, making it easy to find something to eat without going far.',
+    locationNearby: 'For everyday essentials, Lidl and Tesco are both approximately 300 metres from Kamenka. A pizzeria and bistro are also nearby, making it easy to find something to eat without going far.',
 
     contactLead: 'Do you have a question or would you like to book a stay? Fill out the form below and we will get back to you within 24 hours.',
     contactDirect: 'You can also contact us directly by phone: +420 606 445 681 or email: kamenka.klasterec@gmail.com',
@@ -170,6 +171,7 @@ const translations = {
     locationLead: 'Při návštěvě Klášterce nad Ohří můžete prozkoumat řeku Ohři, zámek Klášterec nad Ohří a jeho krásný přilehlý park. Město a jeho okolí nabízejí klidné prostředí k poznávání, odpočinku a vychutnání zdejší krajiny.',
     nearbyTitle: 'Co je v okolí',
     nearbyText: 'Pro každodenní nákupy jsou Lidl a Tesco vzdálené od Kamenky přibližně 300 metrů. V blízkosti se nachází také pizzerie a bistro, takže si můžete snadno zajít něco k jídlu, aniž byste museli chodit daleko.',
+    locationNearby: 'Pro každodenní nákupy jsou Lidl a Tesco vzdálené od Kamenky přibližně 300 metrů. V blízkosti se nachází také pizzerie a bistro, takže si můžete snadno zajít něco k jídlu, aniž byste museli chodit daleko.',
 
     contactLead: 'Máte dotaz nebo si chcete rezervovat pobyt? Vyplňte formulář níže a my se Vám ozveme zpět nejpozději do 24 hodin.',
     contactDirect: 'Můžete nás také kontaktovat přímo na telefonu: +420 606 445 681 nebo e-mailem: kamenka.klasterec@gmail.com',
