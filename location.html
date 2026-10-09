@@ -6,15 +6,20 @@
 <title>Location | Kamenka Klasterec</title>
 <link rel="stylesheet" href="style.css">
 <style>
-/* Location gallery: larger, natural-size photographs, with no stretching or cropping. */
+/* Location page — scoped layout only. Photographs keep their true proportions. */
 .location-gallery-wrap {
   padding: 1.5rem 0 0;
 }
 .location-gallery {
-  width: min(1120px, 100%);
-  margin: 0 auto;
+  width: min(1120px, calc(100vw - 8%));
+  max-width: 1120px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
   align-items: start;
 }
@@ -37,6 +42,10 @@
 }
 .location-copy p {
   margin: 0 0 1rem;
+}
+@media (max-width: 900px) {
+  .location-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .location-copy { transform: none; }
 }
 @media (max-width: 600px) {
   .location-gallery { grid-template-columns: 1fr; }
