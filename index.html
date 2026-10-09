@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
   .home-room-photos { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; align-items:start; margin:0 0 1.5rem; }
-  .home-room-photos img { width:100%; height:auto; border-radius:4px; display:block; }
+  .home-room-photos img { width:100%; aspect-ratio:4 / 3; height:auto; object-fit:cover; border-radius:4px; display:block; }
   .second-floor-photos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; align-items:start; }
   .second-floor-photos img { width:100%; height:auto; border-radius:4px; display:block; }
   @media (max-width:600px) { .home-room-photos { grid-template-columns:1fr; } .second-floor-photos { grid-template-columns:repeat(2,minmax(0,1fr)); } }
@@ -28,7 +28,7 @@
 <section class="hero">
   <div class="wrap">
     <div style="display:grid !important; grid-template-columns:repeat(2, minmax(0, 1fr)) !important; gap:1rem; align-items:start; margin-bottom:2.5rem;">
-      <img class="lightbox-trigger" src="photos/Entrance to the building.jpg" alt="Entrance to the building" data-alt-en="Entrance to the building" data-alt-cz="Vstup do budovy" style="width:100%; height:auto; border-radius:4px; display:block;">
+      <img class="lightbox-trigger" src="photos/Entrance to the building.jpg" alt="Entrance to the building" data-alt-en="Entrance to the building" data-alt-cz="Vstup do budovy" style="width:100%; height:auto; aspect-ratio:4 / 3; object-fit:cover; border-radius:4px; display:block;">
       <img class="lightbox-trigger" src="photos/balcony-view.jpg" alt="View from the balcony" data-alt-en="View from the balcony" data-alt-cz="Výhled z balkonu" style="width:100%; height:auto; border-radius:4px; display:block;">
     </div>
     <p class="eyebrow" data-i18n="homeEyebrow">A quiet retreat</p>
@@ -60,7 +60,7 @@
   <div class="wrap">
     <h2 style="text-align:center; margin-bottom:2rem;" data-i18n="secondFloorTitle" data-alt-en="Second Floor" data-alt-cz="Druhé patro">Second Floor</h2>
     <div class="second-floor-photos">
-      <img class="lightbox-trigger" src="photos/entrance.jpg" alt="Entrance to the property" data-alt-en="Entrance to the property" data-alt-cz="Vchod do ubytování">
+      <img class="lightbox-trigger" src="photos/Main%20entrance.jpg" alt="Main entrance to the property" data-alt-en="Main entrance to the property" data-alt-cz="Hlavní vchod do ubytování">
       <img class="lightbox-trigger" src="photos/2nd fl staircase.jpg" alt="Second-floor staircase" data-alt-en="Second-floor staircase" data-alt-cz="Schodiště ve druhém patře">
       <img class="lightbox-trigger" src="photos/master-bedroom.jpg" alt="Master bedroom" data-alt-en="Master bedroom" data-alt-cz="Hlavní ložnice">
       <img class="lightbox-trigger" src="photos/single-bed.jpg" alt="Second bedroom" data-alt-en="Second bedroom" data-alt-cz="Druhá ložnice">
