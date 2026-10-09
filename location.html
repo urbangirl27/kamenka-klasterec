@@ -13,7 +13,11 @@
 .location-gallery {
   width: min(1120px, calc(100vw - 10%));
   max-width: 1120px;
-  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
