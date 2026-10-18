@@ -17,6 +17,43 @@
 .location-lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.88); align-items: center; justify-content: center; padding: 2rem; box-sizing: border-box; cursor: pointer; }
 .location-lightbox img { max-width: 92vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; border-radius: 4px; cursor: default; }
 </style>
+
+<style id="kamenka-navigation-spacing-fix">
+/* Keep navigation links evenly spaced on desktop and mobile. */
+header.site nav.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+header.site nav.main > a {
+  margin: 0 !important;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+/* The Contact page previously constrained its header to a narrow form width. */
+header.site > .wrap {
+  max-width: 1120px !important;
+  width: min(1120px, 92%);
+  box-sizing: border-box;
+}
+@media (max-width: 760px) {
+  header.site nav.main {
+    gap: 0.3rem;
+    row-gap: 0.35rem;
+  }
+  header.site nav.main > a {
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    margin: 0 !important;
+    font-size: 0.92rem;
+  }
+}
+</style>
+
 </head>
 <body data-page="location">
 <header class="site"><div class="wrap"><span class="logo">Kamenka Klasterec</span>
@@ -65,22 +102,6 @@ document.addEventListener('DOMContentLoaded', function () { updateLocation(); do
   box.addEventListener('click', function (event) { if (event.target === box) { box.style.display = 'none'; image.src = ''; box.setAttribute('aria-hidden', 'true'); } });
   document.addEventListener('keydown', function (event) { if (event.key === 'Escape') { box.style.display = 'none'; image.src = ''; box.setAttribute('aria-hidden', 'true'); } });
  });
-})();
-</script>
-
-<script>
-(function(){
-  function updatePricesLink(){
-    var lang = 'en';
-    try { lang = localStorage.getItem('kamenkaLanguage') === 'cz' ? 'cz' : 'en'; } catch(e) {}
-    document.querySelectorAll('.main [data-en][data-cz]').forEach(function(el){
-      el.textContent = el.getAttribute(lang === 'cz' ? 'data-cz' : 'data-en');
-    });
-  }
-  document.addEventListener('DOMContentLoaded', updatePricesLink);
-  document.addEventListener('click', function(event){
-    if (event.target.closest('[data-language]')) window.setTimeout(updatePricesLink, 0);
-  });
 })();
 </script>
 </body></html>

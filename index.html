@@ -12,6 +12,43 @@
 .second-floor-photos img { width:100%; height:auto; border-radius:4px; display:block; }
 @media (max-width:600px) { .home-room-photos { grid-template-columns:1fr; } .second-floor-photos { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 </style>
+
+<style id="kamenka-navigation-spacing-fix">
+/* Keep navigation links evenly spaced on desktop and mobile. */
+header.site nav.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+header.site nav.main > a {
+  margin: 0 !important;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+/* The Contact page previously constrained its header to a narrow form width. */
+header.site > .wrap {
+  max-width: 1120px !important;
+  width: min(1120px, 92%);
+  box-sizing: border-box;
+}
+@media (max-width: 760px) {
+  header.site nav.main {
+    gap: 0.3rem;
+    row-gap: 0.35rem;
+  }
+  header.site nav.main > a {
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    margin: 0 !important;
+    font-size: 0.92rem;
+  }
+}
+</style>
+
 </head>
 <body data-page="home">
 <header class="site"><div class="wrap">
