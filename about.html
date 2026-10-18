@@ -24,7 +24,7 @@
 <a href="index.html" data-i18n="navHome">Home</a>
 <a href="about.html" class="active" data-i18n="navAbout">About Us</a>
 <a href="location.html" data-i18n="navLocation">Location</a>
-<a href="prices.html">Prices &amp; Stay Information</a>
+<a href="prices.html" data-en="Prices &amp; Stay Information" data-cz="Ceny a informace o pobytu">Prices &amp; Stay Information</a>
 <a href="contact.html" data-i18n="navContact">Contact</a>
 </nav></div></header>
 <section class="hero"><div class="wrap">
@@ -58,6 +58,22 @@ close.addEventListener('click',function(e){e.stopPropagation();overlay.classList
 overlay.addEventListener('click',function(){overlay.classList.remove('active');});
 img.addEventListener('click',function(e){e.stopPropagation();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')overlay.classList.remove('active');});
+})();
+</script>
+
+<script>
+(function(){
+  function updatePricesLink(){
+    var lang = 'en';
+    try { lang = localStorage.getItem('kamenkaLanguage') === 'cz' ? 'cz' : 'en'; } catch(e) {}
+    document.querySelectorAll('.main [data-en][data-cz]').forEach(function(el){
+      el.textContent = el.getAttribute(lang === 'cz' ? 'data-cz' : 'data-en');
+    });
+  }
+  document.addEventListener('DOMContentLoaded', updatePricesLink);
+  document.addEventListener('click', function(event){
+    if (event.target.closest('[data-language]')) window.setTimeout(updatePricesLink, 0);
+  });
 })();
 </script>
 </body></html>

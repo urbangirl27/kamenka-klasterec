@@ -24,7 +24,7 @@
 </style>
 </head>
 <body data-page="prices">
-<header class="site"><div class="wrap"><span class="logo">Kamenka Klasterec</span><nav class="main"><a href="index.html" data-i18n="navHome">Home</a><a href="about.html" data-i18n="navAbout">About Us</a><a href="location.html" data-i18n="navLocation">Location</a><a href="prices.html" class="active">Prices &amp; Stay Information</a><a href="contact.html" data-i18n="navContact">Contact</a></nav></div></header>
+<header class="site"><div class="wrap"><span class="logo">Kamenka Klasterec</span><nav class="main"><a href="index.html" data-i18n="navHome">Home</a><a href="about.html" data-i18n="navAbout">About Us</a><a href="location.html" data-i18n="navLocation">Location</a><a href="prices.html" class="active" data-en="Prices &amp; Stay Information" data-cz="Ceny a informace o pobytu">Prices &amp; Stay Information</a><a href="contact.html" data-i18n="navContact">Contact</a></nav></div></header>
 <section class="hero"><div class="wrap"><p class="eyebrow" data-en="KAMENKA · GUEST INFORMATION" data-cz="KAMENKA · INFORMACE PRO HOSTY">KAMENKA · GUEST INFORMATION</p><h1 data-en="Prices &amp; Stay Information" data-cz="Ceny a informace o pobytu">Prices &amp; Stay Information</h1><p class="lead" data-en="Everything you need to know before your stay." data-cz="Vše, co potřebujete vědět před pobytem.">Everything you need to know before your stay.</p></div></section>
 <main class="stay-wrap">
 <div class="stay-intro"><h2 data-en="Welcome to Kamenka" data-cz="Vítejte v Kamence">Welcome to Kamenka</h2><p data-en="To help everyone enjoy a comfortable stay, please take a moment to read the information below." data-cz="Aby byl pobyt příjemný pro všechny, věnujte prosím chvíli přečtení následujících informací.">To help everyone enjoy a comfortable stay, please take a moment to read the information below.</p></div>
@@ -46,7 +46,7 @@
     var lang = 'en';
     try { lang = localStorage.getItem('kamenkaLanguage') === 'cz' ? 'cz' : 'en'; } catch (e) {}
     document.documentElement.lang = lang === 'cz' ? 'cs' : 'en';
-    document.querySelectorAll('main [data-en][data-cz], .hero [data-en][data-cz], .stay-contact [data-en][data-cz]').forEach(function (el) {
+    document.querySelectorAll('.main [data-en][data-cz], main [data-en][data-cz], .hero [data-en][data-cz], .stay-contact [data-en][data-cz]').forEach(function (el) {
       el.textContent = el.getAttribute(lang === 'cz' ? 'data-cz' : 'data-en');
     });
   }

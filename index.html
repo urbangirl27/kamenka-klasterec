@@ -20,7 +20,7 @@
 <a href="index.html" class="active" data-i18n="navHome">Home</a>
 <a href="about.html" data-i18n="navAbout">About Us</a>
 <a href="location.html" data-i18n="navLocation">Location</a>
-<a href="prices.html">Prices &amp; Stay Information</a>
+<a href="prices.html" data-en="Prices &amp; Stay Information" data-cz="Ceny a informace o pobytu">Prices &amp; Stay Information</a>
 <a href="contact.html" data-i18n="navContact">Contact</a>
 </nav></div></header>
 <section class="hero"><div class="wrap">
@@ -47,7 +47,7 @@
 <p style="margin-bottom:1rem;" data-i18n="homeComfort3">The second floor and the attached attic hold three separate double rooms. The attic has its own private bathroom with a shower and a toilet. The second floor also has a spacious kitchen with a dining table, a television, and a private bathroom with a bathtub and a toilet, along with a utility room with a washing machine and dryer.</p>
 <p style="margin-bottom:1rem;" data-i18n="homeComfort4">The attic and second floor can be adapted to suit individual requirements, for up to ten people.</p>
 </div></div></section>
-<section style="padding:1rem 0 4rem;"><div class="wrap"><h2 style="text-align:center;margin-bottom:2rem;" data-i18n="secondFloorTitle">Second Floor</h2>
+<section style="padding:1rem 0 4rem;"><div class="wrap"><h2 style="text-align:center;margin-bottom:2rem;" class="language-heading" data-alt-en="Second Floor" data-alt-cz="Druhé patro">Second Floor</h2>
 <div class="second-floor-photos">
 <img class="lightbox-trigger" src="photos/Main%20entrance.jpg" alt="Main entrance to the property" data-alt-en="Main entrance to the property" data-alt-cz="Hlavní vchod do ubytování">
 <img class="lightbox-trigger" src="photos/2nd%20fl%20staircase.jpg" alt="Second-floor staircase" data-alt-en="Second-floor staircase" data-alt-cz="Schodiště ve druhém patře">
@@ -56,7 +56,7 @@
 <img class="lightbox-trigger" src="photos/bathroom.jpg" alt="Bathroom" data-alt-en="Bathroom" data-alt-cz="Koupelna">
 <img class="lightbox-trigger" src="photos/vanity.jpg" alt="Bathroom vanity" data-alt-en="Bathroom vanity" data-alt-cz="Koupelnová skříňka s umyvadlem">
 </div></div></section>
-<section style="padding:1rem 0 4rem;"><div class="wrap"><h2 style="text-align:center;margin-bottom:2rem;" data-i18n="atticTitle">Attic</h2>
+<section style="padding:1rem 0 4rem;"><div class="wrap"><h2 style="text-align:center;margin-bottom:2rem;" class="language-heading" data-alt-en="Attic" data-alt-cz="Podkroví">Attic</h2>
 <div style="display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:1rem;align-items:start;">
 <img class="lightbox-trigger" src="photos/Attic%20shower.jpg" alt="Attic shower" data-alt-en="Attic shower" data-alt-cz="Sprcha v podkroví" style="width:100%;height:auto;border-radius:4px;display:block;grid-row:span 3;">
 <img class="lightbox-trigger" src="photos/Attic%201st%20rm-%202nd%20single%20bed%20view%20of%20window.jpg" alt="Attic room with single bed and window view" data-alt-en="Attic room with single bed and window view" data-alt-cz="Podkrovní pokoj s jednolůžkem a výhledem z okna" style="width:100%;height:auto;border-radius:4px;display:block;">
@@ -66,7 +66,37 @@
 <img class="lightbox-trigger" src="photos/Attic-1st%20rm-%20balcony%20door%20and%20desk.jpg" alt="Attic room with balcony door and desk" data-alt-en="Attic room with balcony door and desk" data-alt-cz="Podkrovní pokoj s balkonovými dveřmi a stolem" style="width:100%;height:auto;border-radius:4px;display:block;grid-column:2;">
 </div></div></section>
 <footer class="site"><div class="wrap">&copy; Kamenka Klasterec — Chomutovská 209, Klášterec nad Ohří, 431 51, (Za nakládací rampou TESCA)</div></footer>
-<script src="language.js"></script><script src="language-headings.js"></script>
+<script src="language.js"></script>
+<script>
+(function () {
+  function updateSectionHeadings() {
+    var language = localStorage.getItem('kamenkaLanguage') === 'cz' ? 'cz' : 'en';
+    document.querySelectorAll('.language-heading').forEach(function (heading) {
+      heading.textContent = language === 'cz' ? heading.dataset.altCz : heading.dataset.altEn;
+    });
+  }
+  document.addEventListener('DOMContentLoaded', updateSectionHeadings);
+  document.addEventListener('click', function (event) {
+    if (event.target.closest('[data-language]')) updateSectionHeadings();
+  });
+})();
+</script>
 <div class="lightbox-overlay" id="lightbox"><button class="lightbox-close" id="lightbox-close">&times;</button><img src="" alt="" id="lightbox-img"></div>
 <script>(function(){var overlay=document.getElementById('lightbox'),img=document.getElementById('lightbox-img'),close=document.getElementById('lightbox-close');document.querySelectorAll('img.lightbox-trigger').forEach(function(el){el.addEventListener('click',function(){img.src=el.src;img.alt=el.alt;overlay.classList.add('active');});});close.addEventListener('click',function(e){e.stopPropagation();overlay.classList.remove('active');});overlay.addEventListener('click',function(){overlay.classList.remove('active');});img.addEventListener('click',function(e){e.stopPropagation();});document.addEventListener('keydown',function(e){if(e.key==='Escape')overlay.classList.remove('active');});})();</script>
+
+<script>
+(function(){
+  function updatePricesLink(){
+    var lang = 'en';
+    try { lang = localStorage.getItem('kamenkaLanguage') === 'cz' ? 'cz' : 'en'; } catch(e) {}
+    document.querySelectorAll('.main [data-en][data-cz]').forEach(function(el){
+      el.textContent = el.getAttribute(lang === 'cz' ? 'data-cz' : 'data-en');
+    });
+  }
+  document.addEventListener('DOMContentLoaded', updatePricesLink);
+  document.addEventListener('click', function(event){
+    if (event.target.closest('[data-language]')) window.setTimeout(updatePricesLink, 0);
+  });
+})();
+</script>
 </body></html>
