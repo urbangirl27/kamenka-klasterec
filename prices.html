@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prices &amp; Stay Information | Kamenka Klasterec</title><link rel="stylesheet" href="style.css">
-<style>
-.stay-wrap{max-width:900px;margin:0 auto;padding:3rem 2rem 4rem}.stay-top{display:flex;justify-content:flex-end;gap:.5rem;margin-bottom:1.5rem}.stay-top button{border:1px solid var(--border);background:var(--cream-deep);color:var(--heading);padding:.45rem .8rem;border-radius:4px;cursor:pointer}.stay-intro{text-align:center;margin-bottom:2.5rem}.stay-card{background:var(--cream-deep);border:1px solid var(--border);border-radius:6px;padding:1.5rem 1.7rem;margin:1.2rem 0}.stay-card h2{margin-bottom:.8rem}.stay-card h3{margin:1rem 0 .4rem}.stay-card p:last-child{margin-bottom:0}.stay-times{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.stay-time{padding:1rem;background:var(--cream);border-radius:4px}.stay-time strong{display:block;color:var(--heading)}.stay-contact{text-align:center;margin-top:2rem}.stay-contact .btn{margin-top:.5rem}
-@media(max-width:600px){.stay-wrap{padding:2rem 1rem}.stay-times{grid-template-columns:1fr}.stay-card{padding:1.2rem}}
-</style></head>
-<body>
-<header class="site"><div class="wrap"><span class="logo">Kamenka Klasterec</span><nav class="main"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="location.html">Location</a><a href="prices.html" class="active">Prices &amp; Stay Information</a><a href="contact.html">Contact</a></nav></div></header>
-<section class="hero"><div class="wrap"><p class="eyebrow" data-en="KAMENKA · GUEST INFORMATION" data-cz="KAMENKA · INFORMACE PRO HOSTY">KAMENKA · GUEST INFORMATION</p><h1 data-en="Prices &amp; Stay Information" data-cz="Ceny a informace o pobytu">Prices &amp; Stay Information</h1><p class="lead" data-en="Everything you need to know before your stay." data-cz="Vše, co potřebujete vědět před pobytem.">Everything you need to know before your stay.</p></div></section>
-<main class="stay-wrap"><div class="stay-top"><button type="button" id="enBtn">English</button><button type="button" id="czBtn">Česky</button></div>
-<div class="stay-intro"><h2 data-en="Welcome to Kamenka" data-cz="Vítejte v Kamence">Welcome to Kamenka</h2><p data-en="To help everyone enjoy a comfortable stay, please take a moment to read the information below." data-cz="Aby byl pobyt příjemný pro všechny, věnujte prosím chvíli přečtení následujících informací.">To help everyone enjoy a comfortable stay, please take a moment to read the information below.</p></div>
-<section class="stay-card"><h2 data-en="Check-in and check-out" data-cz="Příjezd a odjezd">Check-in and check-out</h2><div class="stay-times"><div class="stay-time"><strong data-en="Check-in" data-cz="Příjezd">Check-in</strong><span>14:00–20:00</span></div><div class="stay-time"><strong data-en="Check-out" data-cz="Odjezd">Check-out</strong><span data-en="By 10:00" data-cz="Do 10:00">By 10:00</span></div></div></section>
-<section class="stay-card"><h2 data-en="Prices" data-cz="Ceny">Prices</h2><p data-en="Please contact us for a quote for your dates and group size." data-cz="Pro cenovou nabídku podle termínu a počtu hostů nás prosím kontaktujte.">Please contact us for a quote for your dates and group size.</p><p data-en="Prices will be published here once confirmed." data-cz="Ceny zde budou zveřejněny po jejich potvrzení.">Prices will be published here once confirmed.</p></section>
-<section class="stay-card"><h2 data-en="A few house rules" data-cz="Několik pravidel pobytu">A few house rules</h2><p data-en="To keep Kamenka clean, comfortable and welcoming for everyone, we kindly ask our guests to observe a few simple rules during their stay." data-cz="Aby Kamenka zůstala čistá, pohodlná a příjemná pro všechny, prosíme hosty o dodržování několika jednoduchých pravidel.">To keep Kamenka clean, comfortable and welcoming for everyone, we kindly ask our guests to observe a few simple rules during their stay.</p>
-<h3 data-en="No smoking indoors" data-cz="Zákaz kouření uvnitř">No smoking indoors</h3><p data-en="Smoking is not permitted inside the flat. Thank you for helping us keep the indoor environment fresh and pleasant for all guests." data-cz="V apartmánu je zakázáno kouřit. Děkujeme, že pomáháte udržovat vnitřní prostory svěží a příjemné pro všechny hosty.">Smoking is not permitted inside the flat. Thank you for helping us keep the indoor environment fresh and pleasant for all guests.</p>
-<h3 data-en="Footwear and cleanliness" data-cz="Obuv a čistota">Footwear and cleanliness</h3><p data-en="Please be mindful of muddy or very dirty shoes when entering and walking around the flat. Kindly remove your shoes or clean them before coming inside to help keep the floors clean." data-cz="Při vstupu a pohybu po apartmánu prosím dávejte pozor na blátivou nebo velmi špinavou obuv. Před vstupem si boty zujte nebo očistěte, aby podlahy zůstaly čisté.">Please be mindful of muddy or very dirty shoes when entering and walking around the flat. Kindly remove your shoes or clean them before coming inside to help keep the floors clean.</p>
-<h3 data-en="Food and cleanliness" data-cz="Jídlo a čistota">Food and cleanliness</h3><p data-en="Please do not leave food outside the flat or unattended on the stovetop. Leftover food can attract mice, other rodents, flies and fruit flies into the building. Kindly store food properly and keep the kitchen clean to help prevent unwanted pests." data-cz="Nenechávejte prosím jídlo venku mimo apartmán ani bez dozoru na sporáku. Zbytky jídla mohou do budovy přilákat myši, další hlodavce, mouchy a octomilky. Potraviny řádně ukládejte a udržujte kuchyň čistou, abychom předešli nežádoucím škůdcům.">Please do not leave food outside the flat or unattended on the stovetop. Leftover food can attract mice, other rodents, flies and fruit flies into the building. Kindly store food properly and keep the kitchen clean to help prevent unwanted pests.</p>
-<h3 data-en="Cleanliness and excessive waste" data-cz="Čistota a nadměrné množství odpadu">Cleanliness and excessive waste</h3><p data-en="Please leave the flat reasonably clean and dispose of rubbish appropriately. An additional fee of 1,000 CZK will be charged if excessive rubbish is left behind or exceptional cleaning is required due to the condition of the flat." data-cz="Prosíme, zanechte apartmán v přiměřeně čistém stavu a odpad řádně vyhoďte. Pokud zde zůstane nadměrné množství odpadu nebo bude vzhledem ke stavu apartmánu nutný mimořádný úklid, bude účtován poplatek 1 000 Kč.">Please leave the flat reasonably clean and dispose of rubbish appropriately. An additional fee of 1,000 CZK will be charged if excessive rubbish is left behind or exceptional cleaning is required due to the condition of the flat.</p>
-<h3 data-en="Registered guests and occupancy" data-cz="Nahlášení hosté a počet osob">Registered guests and occupancy</h3><p data-en="Please tell us the total number of guests when booking so we can prepare the accommodation appropriately. Additional guests who have not been declared in advance may incur an extra charge. Please contact us beforehand if the number of guests changes." data-cz="Při rezervaci nám prosím sdělte celkový počet hostů, abychom mohli ubytování náležitě připravit. Za předem nenahlášené další hosty může být účtován příplatek. Pokud se počet hostů změní, kontaktujte nás prosím předem.">Please tell us the total number of guests when booking so we can prepare the accommodation appropriately. Additional guests who have not been declared in advance may incur an extra charge. Please contact us beforehand if the number of guests changes.</p>
-<h3 data-en="Property damage" data-cz="Poškození majetku">Property damage</h3><p data-en="Guests are responsible for damage to the flat, its furnishings, equipment or other property caused during their stay. Please report accidental damage as soon as possible. The cost of repairing or replacing damaged items may be charged to the guest responsible." data-cz="Hosté odpovídají za škody způsobené během pobytu na apartmánu, jeho vybavení nebo jiném majetku. Případné náhodné poškození nám prosím co nejdříve oznamte. Náklady na opravu nebo výměnu poškozených věcí mohou být účtovány odpovědnému hostovi.">Guests are responsible for damage to the flat, its furnishings, equipment or other property caused during their stay. Please report accidental damage as soon as possible. The cost of repairing or replacing damaged items may be charged to the guest responsible.</p></section>
-<div class="stay-contact"><p data-en="Have a question or need a quote? Get in touch with us." data-cz="Máte dotaz nebo potřebujete cenovou nabídku? Kontaktujte nás.">Have a question or need a quote? Get in touch with us.</p><a class="btn" href="contact.html" data-en="Contact us" data-cz="Kontaktujte nás">Contact us</a></div></main>
-<footer class="site"><div class="wrap">&copy; Kamenka Klasterec — Chomutovská 209, Klášterec nad Ohří, 431 51, (Za nakládací rampou TESCA)</div></footer>
-<script>
-(function(){function setLanguage(lang){document.documentElement.lang=lang==='cz'?'cs':'en';document.querySelectorAll('[data-en][data-cz]').forEach(function(el){el.innerHTML=el.getAttribute(lang==='cz'?'data-cz':'data-en');});try{localStorage.setItem('kamenkaLanguage',lang);}catch(e){}}document.getElementById('enBtn').addEventListener('click',function(){setLanguage('en');});document.getElementById('czBtn').addEventListener('click',function(){setLanguage('cz');});var saved='en';try{saved=localStorage.getItem('kamenkaLanguage')==='cz'?'cz':'en';}catch(e){}setLanguage(saved);})();
-</script></body></html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prices, arrival information and house rules for Kamenka in Klášterec nad Ohří.">
+  <title>Prices &amp; Stay Information | Kamenka</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="prices.css">
+  <script src="prices-language.js" defer></script>
+</head>
+<body data-page="prices">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-logo" href="index.html" aria-label="Kamenka home">KAMENKA</a>
+      <nav class="main" aria-label="Main navigation">
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <a href="about.html" data-i18n="navAbout">About Us</a>
+        <a href="location.html" data-i18n="navLocation">Location</a>
+        <a href="prices.html" class="active" data-i18n="navPrices">Prices &amp; Stay Information</a>
+        <a href="contact.html" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-language="en" aria-pressed="true">EN</button>
+        <button type="button" data-language="cz" aria-pressed="false">CZ</button>
+      </div>
+    </div>
+  </header>
+  <main class="prices-page">
+    <section class="prices-hero">
+      <p class="eyebrow" data-i18n="eyebrow">KAMENKA · GUEST INFORMATION</p>
+      <h1 data-i18n="pageTitle">Prices &amp; Stay Information</h1>
+      <p class="prices-intro" data-i18n="intro">Everything you need to know before your stay in Kamenka.</p>
+      <a class="prices-contact-link" href="contact.html" data-i18n="askRates">Please contact us for current rates and availability</a>
+    </section>
+    <section class="stay-details" aria-label="Arrival and departure information">
+      <div class="stay-detail"><span class="detail-label" data-i18n="checkInLabel">Check-in</span><strong>14:00–20:00</strong><p data-i18n="checkInText">Please arrange your arrival in this time window.</p></div>
+      <div class="stay-detail"><span class="detail-label" data-i18n="checkOutLabel">Check-out</span><strong data-i18n="checkOutTime">By 10:00</strong><p data-i18n="checkOutText">Please leave the flat by the stated time.</p></div>
+      <div class="stay-detail"><span class="detail-label" data-i18n="ratesLabel">Rates &amp; availability</span><strong data-i18n="contactUs">Contact us</strong><p data-i18n="ratesText">For current prices and available dates, please get in touch directly.</p></div>
+    </section>
+    <section class="house-rules">
+      <p class="eyebrow" data-i18n="rulesEyebrow">A FEW HOUSE RULES</p>
+      <h2 data-i18n="rulesTitle">A Few House Rules</h2>
+      <p class="rules-intro" data-i18n="rulesIntro">To keep Kamenka clean, comfortable and welcoming for everyone, we kindly ask our guests to observe a few simple rules during their stay.</p>
+      <article class="rule"><h3 data-i18n="smokingTitle">No smoking indoors</h3><p data-i18n="smokingText">Smoking is not permitted inside the flat. Thank you for helping us keep the indoor environment fresh and pleasant for all guests.</p></article>
+      <article class="rule"><h3 data-i18n="footwearTitle">Footwear and cleanliness</h3><p data-i18n="footwearText">Please be mindful of muddy or very dirty shoes when entering and walking around the flat. Kindly remove your shoes or clean them before coming inside to help keep the floors clean.</p></article>
+      <article class="rule"><h3 data-i18n="foodTitle">Food and Cleanliness</h3><p data-i18n="foodText">Please do not leave food outside the flat or unattended on the stovetop. Leftover food can attract mice, other rodents, flies and fruit flies into the building. Kindly store food properly and keep the kitchen clean to help prevent unwanted pests.</p></article>
+      <article class="rule"><h3 data-i18n="wasteTitle">Cleanliness and Excessive Waste</h3><p data-i18n="wasteText">Guests are kindly asked to leave the flat in a reasonable state of cleanliness and dispose of their rubbish appropriately. An additional fee of 1,000 CZK will be charged if excessive rubbish is left behind or the flat requires exceptional cleaning due to its condition.</p></article>
+      <article class="rule"><h3 data-i18n="guestsTitle">Registered Guests and Occupancy</h3><p data-i18n="guestsText">Please inform us of the total number of guests who will be staying at the flat when making your booking. This allows us to prepare the accommodation appropriately and ensure everyone is comfortably accommodated. Any additional guests who have not been declared in advance may incur an extra charge. Please contact us beforehand if the number of guests changes.</p></article>
+      <article class="rule"><h3 data-i18n="damageTitle">Property Damage</h3><p data-i18n="damageText">Guests are responsible for any damage to the flat, its furnishings, equipment or other property caused during their stay. Please report any accidental damage to us as soon as possible. The cost of repairing or replacing damaged items may be charged to the guest responsible.</p></article>
+    </section>
+    <section class="prices-cta"><h2 data-i18n="ctaTitle">Planning a stay?</h2><p data-i18n="ctaText">Get in touch for current rates, availability or any questions about your visit.</p><a class="button" href="contact.html" data-i18n="contactButton">Contact Kamenka</a></section>
+  </main>
+  <footer class="site-footer"><p>© <span id="year"></span> Kamenka</p><div class="footer-links"><a href="privacy-policy.html" data-i18n="privacy">Privacy Policy</a><a href="terms-and-conditions.html" data-i18n="terms">Terms &amp; Conditions</a></div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
