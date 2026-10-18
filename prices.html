@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prices, arrival information and house rules for Kamenka in Klášterec nad Ohří.">
+  <title>Prices &amp; Stay Information | Kamenka</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="prices.css">
+  <script src="prices-language.js" defer></script>
+</head>
+<body data-page="prices">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-logo" href="index.html" aria-label="Kamenka home">KAMENKA</a>
+      <nav class="main" aria-label="Main navigation">
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <a href="about.html" data-i18n="navAbout">About Us</a>
+        <a href="location.html" data-i18n="navLocation">Location</a>
+        <a href="prices.html" class="active" data-i18n="navPrices">Prices &amp; Stay Information</a>
+        <a href="contact.html" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-language="en" aria-pressed="true">EN</button>
+        <button type="button" data-language="cz" aria-pressed="false">CZ</button>
+      </div>
+    </div>
+  </header>
+  <main class="prices-page">
+    <section class="prices-hero">
+      <p class="eyebrow" data-i18n="eyebrow">KAMENKA · GUEST INFORMATION</p>
+      <h1 data-i18n="pageTitle">Prices &amp; Stay Information</h1>
+      <p class="prices-intro" data-i18n="intro">Everything you need to know before your stay in Kamenka.</p>
+      <a class="prices-contact-link" href="contact.html" data-i18n="askRates">Please contact us for current rates and availability</a>
+    </section>
+    <section class="stay-details" aria-label="Arrival and departure information">
+      <div class="stay-detail"><span class="detail-label" data-i18n="checkInLabel">Check-in</span><strong>14:00–20:00</strong><p data-i18n="checkInText">Please arrange your arrival in this time window.</p></div>
+      <div class="stay-detail"><span class="detail-label" data-i18n="checkOutLabel">Check-out</span><strong data-i18n="checkOutTime">By 10:00</strong><p data-i18n="checkOutText">Please leave the flat by the stated time.</p></div>
+      <div class="stay-detail"><span class="detail-label" data-i18n="ratesLabel">Rates &amp; availability</span><strong data-i18n="contactUs">Contact us</strong><p data-i18n="ratesText">For current prices and available dates, please get in touch directly.</p></div>
+    </section>
+    <section class="house-rules">
+      <p class="eyebrow" data-i18n="rulesEyebrow">A FEW HOUSE RULES</p>
+      <h2 data-i18n="rulesTitle">A Few House Rules</h2>
+      <p class="rules-intro" data-i18n="rulesIntro">To keep Kamenka clean, comfortable and welcoming for everyone, we kindly ask our guests to observe a few simple rules during their stay.</p>
+      <article class="rule"><h3 data-i18n="smokingTitle">No smoking indoors</h3><p data-i18n="smokingText">Smoking is not permitted inside the flat. Thank you for helping us keep the indoor environment fresh and pleasant for all guests.</p></article>
+      <article class="rule"><h3 data-i18n="footwearTitle">Footwear and cleanliness</h3><p data-i18n="footwearText">Please be mindful of muddy or very dirty shoes when entering and walking around the flat. Kindly remove your shoes or clean them before coming inside to help keep the floors clean.</p></article>
+      <article class="rule"><h3 data-i18n="foodTitle">Food and Cleanliness</h3><p data-i18n="foodText">Please do not leave food outside the flat or unattended on the stovetop. Leftover food can attract mice, other rodents, flies and fruit flies into the building. Kindly store food properly and keep the kitchen clean to help prevent unwanted pests.</p></article>
+      <article class="rule"><h3 data-i18n="wasteTitle">Cleanliness and Excessive Waste</h3><p data-i18n="wasteText">Guests are kindly asked to leave the flat in a reasonable state of cleanliness and dispose of their rubbish appropriately. An additional fee of 1,000 CZK will be charged if excessive rubbish is left behind or the flat requires exceptional cleaning due to its condition.</p></article>
+      <article class="rule"><h3 data-i18n="guestsTitle">Registered Guests and Occupancy</h3><p data-i18n="guestsText">Please inform us of the total number of guests who will be staying at the flat when making your booking. This allows us to prepare the accommodation appropriately and ensure everyone is comfortably accommodated. Any additional guests who have not been declared in advance may incur an extra charge. Please contact us beforehand if the number of guests changes.</p></article>
+      <article class="rule"><h3 data-i18n="damageTitle">Property Damage</h3><p data-i18n="damageText">Guests are responsible for any damage to the flat, its furnishings, equipment or other property caused during their stay. Please report any accidental damage to us as soon as possible. The cost of repairing or replacing damaged items may be charged to the guest responsible.</p></article>
+    </section>
+    <section class="prices-cta"><h2 data-i18n="ctaTitle">Planning a stay?</h2><p data-i18n="ctaText">Get in touch for current rates, availability or any questions about your visit.</p><a class="button" href="contact.html" data-i18n="contactButton">Contact Kamenka</a></section>
+  </main>
+  <footer class="site-footer"><p>© <span id="year"></span> Kamenka</p><div class="footer-links"><a href="privacy-policy.html" data-i18n="privacy">Privacy Policy</a><a href="terms-and-conditions.html" data-i18n="terms">Terms &amp; Conditions</a></div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
