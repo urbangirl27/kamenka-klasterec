@@ -19,13 +19,18 @@
 </style>
 
 <style id="kamenka-navigation-spacing-fix">
-/* Keep navigation links evenly spaced on desktop and mobile. */
+/* Keep the name on one line and let navigation use the available width. */
+header.site .logo {
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+}
 header.site nav.main {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
+  justify-content: space-between;
+  gap: 0.45rem 0.65rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -34,22 +39,25 @@ header.site nav.main > a {
   flex: 0 0 auto;
   white-space: nowrap;
 }
-/* The Contact page previously constrained its header to a narrow form width. */
 header.site > .wrap {
   max-width: 1120px !important;
-  width: min(1120px, 92%);
+  width: min(1120px, 96%);
   box-sizing: border-box;
 }
 @media (max-width: 760px) {
+  header.site > .wrap {
+    width: 96%;
+  }
   header.site nav.main {
-    gap: 0.3rem;
-    row-gap: 0.35rem;
+    justify-content: space-between;
+    gap: 0.4rem 0.35rem;
+    row-gap: 0.5rem;
   }
   header.site nav.main > a {
-    padding-left: 0.55rem;
-    padding-right: 0.55rem;
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
     margin: 0 !important;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
   }
 }
 </style>
@@ -102,6 +110,42 @@ document.addEventListener('DOMContentLoaded', function () { updateLocation(); do
   box.addEventListener('click', function (event) { if (event.target === box) { box.style.display = 'none'; image.src = ''; box.setAttribute('aria-hidden', 'true'); } });
   document.addEventListener('keydown', function (event) { if (event.key === 'Escape') { box.style.display = 'none'; image.src = ''; box.setAttribute('aria-hidden', 'true'); } });
  });
+})();
+</script>
+
+<script id="kamenka-prices-link-language-fix">
+(function () {
+  function getLanguage() {
+    try {
+      if (localStorage.getItem('kamenkaLanguage') === 'cz') return 'cz';
+    } catch (e) {}
+    return document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('cs') ? 'cz' : 'en';
+  }
+  function translatePricesLink() {
+    var language = getLanguage();
+    document.querySelectorAll('nav.main a[href$="prices.html"]').forEach(function (link) {
+      var label = language === 'cz' ? 'Ceny a informace o pobytu' : 'Prices & Stay Information';
+      if (link.textContent !== label) link.textContent = label;
+    });
+  }
+  function scheduleTranslation() {
+    translatePricesLink();
+    window.setTimeout(translatePricesLink, 50);
+    window.setTimeout(translatePricesLink, 250);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', scheduleTranslation);
+  } else {
+    scheduleTranslation();
+  }
+  document.addEventListener('click', function (event) {
+    if (event.target.closest('[data-language]')) scheduleTranslation();
+  }, true);
+  window.addEventListener('storage', scheduleTranslation);
+  var nav = document.querySelector('nav.main');
+  if (nav && window.MutationObserver) {
+    new MutationObserver(function () { translatePricesLink(); }).observe(nav, { childList: true, subtree: true, characterData: true });
+  }
 })();
 </script>
 </body></html>
