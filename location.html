@@ -14,8 +14,6 @@
 .location-copy p { margin: 0 0 1rem; }
 @media (max-width: 760px) { .location-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } .location-copy { transform: none; } }
 @media (max-width: 600px) { .location-gallery { grid-template-columns: 1fr; } .location-copy { width: calc(100% - 2rem); } }
-.location-lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.88); align-items: center; justify-content: center; padding: 2rem; box-sizing: border-box; cursor: pointer; }
-.location-lightbox img { max-width: 92vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; border-radius: 4px; cursor: default; }
 </style>
 <style id="kamenka-logo-nav-gap-fix">
 header.site .logo { margin-right: 1.25rem; }
@@ -70,6 +68,27 @@ header.site .logo { margin-right: 1.25rem; }
 @media (max-width: 760px) { header.site .logo { margin-right: 0.75rem; } }
 </style>
 
+
+<style id="kamenka-photo-lightbox-styles">
+.lightbox-trigger { cursor: zoom-in; }
+.lightbox-overlay { display:none; position:fixed; inset:0; z-index:10000; background:rgba(18,18,18,.92); align-items:center; justify-content:center; padding:3.5rem 4.5rem; box-sizing:border-box; }
+.lightbox-overlay.is-open { display:flex; }
+.lightbox-overlay #lightbox-img { display:block; max-width:min(90vw, 1400px); max-height:82vh; width:auto; height:auto; object-fit:contain; border-radius:4px; }
+.lightbox-overlay button { position:absolute; border:0; background:rgba(255,255,255,.14); color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1; border-radius:50%; }
+.lightbox-close { top:1rem; right:1.25rem; width:2.8rem; height:2.8rem; font-size:2rem; }
+.lightbox-prev, .lightbox-next { top:50%; transform:translateY(-50%); width:3rem; height:3rem; font-size:2.5rem; }
+.lightbox-prev { left:1rem; }
+.lightbox-next { right:1rem; }
+.lightbox-caption { position:absolute; bottom:.8rem; left:4rem; right:4rem; color:#fff; text-align:center; font-size:.95rem; }
+@media (max-width:600px) {
+  .lightbox-overlay { padding:3.5rem 2.8rem; }
+  .lightbox-overlay #lightbox-img { max-width:94vw; max-height:78vh; }
+  .lightbox-prev, .lightbox-next { width:2.3rem; height:2.3rem; font-size:1.9rem; }
+  .lightbox-prev { left:.25rem; }
+  .lightbox-next { right:.25rem; }
+  .lightbox-caption { left:2rem; right:2rem; font-size:.85rem; }
+}
+</style>
 </head>
 <body data-page="location">
 <header class="site"><div class="wrap"><span class="logo">Kamenka Klasterec</span>
@@ -91,7 +110,13 @@ header.site .logo { margin-right: 1.25rem; }
 <p data-i18n="locationNearby">For everyday essentials, Lidl and Tesco are both approximately 300 metres from Kamenka. A pizzeria and bistro are also nearby, making it easy to find something to eat without going far.</p>
 </div></div></section>
 <footer class="site"><div class="wrap">&copy; Kamenka Klasterec — Chomutovská 209, Klášterec nad Ohří, 431 51, (Za nakládací rampou TESCA)</div></footer>
-<div class="location-lightbox" id="location-lightbox" aria-hidden="true"><img id="location-lightbox-image" src="" alt=""></div>
+<div class="lightbox-overlay" id="lightbox" aria-hidden="true" role="dialog" aria-label="Photo gallery">
+<button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close photo">&times;</button>
+<button class="lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous photo">&#8249;</button>
+<img src="" alt="" id="lightbox-img">
+<button class="lightbox-next" id="lightbox-next" type="button" aria-label="Next photo">&#8250;</button>
+<div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
 <script src="language.js"></script>
 <script>
 (function () {
@@ -110,14 +135,56 @@ function updateLocation() {
 document.addEventListener('DOMContentLoaded', function () { updateLocation(); document.querySelectorAll('[data-language]').forEach(function (button) { button.addEventListener('click', function () { setTimeout(updateLocation, 0); }); }); });
 })();
 </script>
-<script>
+
+<script id="kamenka-photo-lightbox-script">
 (function () {
- document.addEventListener('DOMContentLoaded', function () {
-  const box = document.getElementById('location-lightbox'); const image = document.getElementById('location-lightbox-image'); if (!box || !image) return;
-  document.querySelectorAll('.location-gallery .lightbox-trigger').forEach(function (thumb) { thumb.addEventListener('click', function () { image.src = thumb.src; image.alt = thumb.alt; box.style.display = 'flex'; box.setAttribute('aria-hidden', 'false'); }); });
-  box.addEventListener('click', function (event) { if (event.target === box) { box.style.display = 'none'; image.src = ''; box.setAttribute('aria-hidden', 'true'); } });
-  document.addEventListener('keydown', function (event) { if (event.key === 'Escape') { box.style.display = 'none'; image.src = ''; box.setAttribute('aria-hidden', 'true'); } });
- });
+  var box = document.getElementById('lightbox');
+  var image = document.getElementById('lightbox-img');
+  var closeButton = document.getElementById('lightbox-close');
+  var prevButton = document.getElementById('lightbox-prev');
+  var nextButton = document.getElementById('lightbox-next');
+  var caption = document.getElementById('lightbox-caption');
+  var photos = Array.prototype.slice.call(document.querySelectorAll('.location-gallery .lightbox-trigger'));
+  var current = 0;
+  if (!box || !image || !photos.length) return;
+  function showPhoto(index) {
+    current = (index + photos.length) % photos.length;
+    var photo = photos[current];
+    var language = 'en';
+    try { if (localStorage.getItem('kamenkaLanguage') === 'cz') language = 'cz'; } catch (e) {}
+    var description = language === 'cz' ? (photo.getAttribute('data-alt-cz') || photo.alt || '') : (photo.getAttribute('data-alt-en') || photo.alt || '');
+    image.src = photo.currentSrc || photo.src;
+    image.alt = description;
+    caption.textContent = description + '  (' + (current + 1) + ' / ' + photos.length + ')';
+    box.classList.add('is-open');
+    box.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeGallery() {
+    box.classList.remove('is-open');
+    box.setAttribute('aria-hidden', 'true');
+    image.src = '';
+    document.body.style.overflow = '';
+  }
+  photos.forEach(function (photo, index) {
+    photo.addEventListener('click', function () { showPhoto(index); });
+    photo.setAttribute('tabindex', '0');
+    photo.setAttribute('role', 'button');
+    photo.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showPhoto(index); }
+    });
+  });
+  closeButton.addEventListener('click', closeGallery);
+  prevButton.addEventListener('click', function (event) { event.stopPropagation(); showPhoto(current - 1); });
+  nextButton.addEventListener('click', function (event) { event.stopPropagation(); showPhoto(current + 1); });
+  box.addEventListener('click', function (event) { if (event.target === box) closeGallery(); });
+  image.addEventListener('click', function (event) { event.stopPropagation(); });
+  document.addEventListener('keydown', function (event) {
+    if (!box.classList.contains('is-open')) return;
+    if (event.key === 'Escape') closeGallery();
+    if (event.key === 'ArrowLeft') showPhoto(current - 1);
+    if (event.key === 'ArrowRight') showPhoto(current + 1);
+  });
 })();
 </script>
 
